@@ -1,0 +1,3 @@
+#!/bin/bash
+
+go get -u github.com/a-h/generate/...
