@@ -6,7 +6,8 @@
   "author": "Albert <r.albert.huang@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc ./main.ts && node ./main.js"
+    "build": "tsc ./main.ts && node ./main.js",
+    "publish": "yarn run publish"
   },
   "dependencies": {
     "typescript": "^4.4.3",
