@@ -1,3 +1,3 @@
-export interface PageMate {
+export interface PageMeta {
     count: number;
 }
