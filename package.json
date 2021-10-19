@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc ./main.ts && node ./main.js",
-    "build:lib": "rm -rf ./dist && tsc --module commonjs --target es5 --outDir dist"
+    "build:lib": "rm -rf ./dist && yarn build:cjs",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist"
   },
   "dependencies": {
     "typescript": "^4.4.3",
