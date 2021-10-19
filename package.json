@@ -1,11 +1,12 @@
 {
   "name": "@ICodeWorld-Inc/service-message",
-  "version": "1.0.5",
-  "main": "index.js",
+  "version": "1.0.7",
+  "main": "dist",
   "repository": "git@github.com:ICodeWorld-Inc/service-message.git",
   "license": "MIT",
   "scripts": {
-    "build": "tsc ./main.ts && node ./main.js"
+    "build": "tsc ./main.ts && node ./main.js",
+    "build:lib": "rm -rf ./dist && tsc --module commonjs --target es5 --outDir dist"
   },
   "dependencies": {
     "typescript": "^4.4.3",
