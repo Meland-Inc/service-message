@@ -1,13 +1,14 @@
 {
   "name": "@ICodeWorld-Inc/service-message",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "dist",
+  "module": "dist/esm",
   "repository": "git@github.com:ICodeWorld-Inc/service-message.git",
-  "license": "MIT",
   "scripts": {
     "build": "tsc ./main.ts && node ./main.js",
-    "build:lib": "rm -rf ./dist && yarn build:cjs",
-    "build:cjs": "tsc --module commonjs --target es5 --outDir dist"
+    "build:lib": "rm -rf ./dist && yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm"
   },
   "dependencies": {
     "typescript": "^4.4.3",
