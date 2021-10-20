@@ -4,6 +4,7 @@
   "main": "dist",
   "module": "dist/esm",
   "repository": "git@github.com:ICodeWorld-Inc/service-message.git",
+  "license": "MIT",
   "scripts": {
     "build": "tsc ./main.ts && node ./main.js",
     "build:lib": "rm -rf ./dist && yarn build:cjs && yarn build:esm",
