@@ -1,6 +1,6 @@
 {
   "name": "@ICodeWorld-Inc/service-message",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist",
   "module": "dist/esm",
   "repository": "git@github.com:ICodeWorld-Inc/service-message.git",
