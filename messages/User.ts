@@ -1,10 +1,10 @@
-export declare enum UserType {
+export enum UserType {
     STUDENT = "STUDENT",
     TEACHER = "TEACHER",
     MANAGER = "MANAGER"
 }
 
-export declare enum Sex {
+export enum Sex {
     MALE = "MALE",
     FEMALE = "FEMALE"
 }
