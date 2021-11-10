@@ -19,13 +19,13 @@ export enum LandFightStatus {
  */
 export enum LandStatus{
     // 自由地格
-    landStatusUnoccupied = 'unoccupied',
+    unoccupied = 'unoccupied',
     // 被攻占地格
-    landStatusOccupied = 'occupied',
+    occupied = 'occupied',
     // 门票地格
-    landStatusticket = 'ticket',
+    ticket = 'ticket',
     // VIP地格(购买的地格)
-    landStatusVip = 'vip'
+    vip = 'vip'
 }
 
 /**
@@ -100,7 +100,7 @@ export interface LandFightStatusUpdate {
     userId: string;
 
     /**
-     * 状态
+     * 状态 attacked || normal
      */
     fightStatus: LandFightStatus,
 }
@@ -123,7 +123,8 @@ export interface LandAttributionUpdate {
     landId: Int32;
 
      /** 
-     * 地格新的归属状态
-    */
-      landStatus: LandStatus;
+     * 地格新的归属状态 
+     * unoccupied || occupied || ticket || vip     
+     */
+    landStatus: LandStatus;
 }
