@@ -1,3 +1,5 @@
 #!/bin/bash
 
-go get -u github.com/a-h/generate/...
+go get github.com/atombender/go-jsonschema/...
+
+gojsonschema -p main schema.json
