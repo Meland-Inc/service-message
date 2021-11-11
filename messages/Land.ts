@@ -79,7 +79,9 @@ export interface MultiLandAttributionUpdate {
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
      */
-    landIds: Int32[]
+    vipLandIds: Int32[]
+    ticketLandIds: Int32[]
+    occupiedLandIds: Int32[]
 }
 
 // land 战斗状态变更消息
