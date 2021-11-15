@@ -31,7 +31,7 @@ export interface Placeable {
     /**
      * object config Id
      */
-    objectId: number;
+    objectId: Int32;
 }
 
 /** 
