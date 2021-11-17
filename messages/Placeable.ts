@@ -14,10 +14,29 @@ export enum PlaceableRarity {
     unique = 'unique'    
 }
 
+
+export interface PlaceableSkill{  
+    /**
+     *  skill name only key
+     */     
+    name: string;
+
+    /**
+     *  skill radius 
+     */   
+    radius: Int32;
+
+    /**
+     *  skill value (type is Int32 || float32)
+     */   
+    value: number;
+}
+
+
 /**
  * 道具信息数据结构
  */
-export interface Placeable {
+export interface Placeable { 
      /**
       *  Nft Id
       */    
@@ -31,7 +50,17 @@ export interface Placeable {
     /**
      * object config Id
      */
-    objectId: number;
+    objectId: Int32;    
+
+    /**
+     * can build land
+     */
+    placeableLand: string[];
+
+    /**
+     * skill list
+     */
+    skillList: PlaceableSkill[];
 }
 
 /** 
