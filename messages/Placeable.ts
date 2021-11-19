@@ -41,19 +41,14 @@ export interface PlaceableCanBuildOutput{
 
 export interface PlaceableSkill{  
     /**
-     *  skill name only key
+     *  skill Id,  only key
      */     
-    name: string;
+    skillId: Int32;
 
     /**
-     *  skill radius 
+     *  skill level 
      */   
-    radius: Int32;
-
-    /**
-     *  skill value (type is Int32 || float32)
-     */   
-    value: number;
+    level: Int32;  
 }
 
 
