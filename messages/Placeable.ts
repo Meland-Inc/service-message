@@ -14,6 +14,30 @@ export enum PlaceableRarity {
     unique = 'unique'    
 }
 
+export interface PlaceableCanBuildInput{
+    /**
+     *  Nft Id
+     */    
+    placeableId: string;
+
+    /**
+     *  归属用户id
+     */
+    userId: string;
+}
+export interface PlaceableCanBuildOutput{
+    /**
+     * 消息版本号
+     */
+    etag: Int32;
+
+    /**
+     *  Nft Id
+     */    
+    placeableId: string;
+
+    canBuild: boolean;
+}
 
 export interface PlaceableSkill{  
     /**
@@ -64,9 +88,9 @@ export interface Placeable {
 }
 
 /** 
- * 玩家所有的道具信息
+ * 玩家所有的道具信息 返回消息结构
  */
-export interface UserPlaceables {
+export interface UserPlaceablesOutput {
     /**
      * 消息版本号
      */
@@ -82,6 +106,16 @@ export interface UserPlaceables {
      */
     placeables: Placeable[];
 }
+/** 
+ * 玩家所有的道具信息 请求消息结构
+ */
+export interface UserPlaceablesInput {
+    /**
+     *  归属用户id
+     */
+    userId: string;
+}
+
 
 // 添加用户道具
 export interface AddPlaceable {
