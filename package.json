@@ -1,11 +1,12 @@
 {
   "name": "@ICodeWorld-Inc/service-message",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "main": "dist",
   "module": "dist/esm",
   "repository": "git@github.com:ICodeWorld-Inc/service-message.git",
   "license": "MIT",
   "scripts": {
+    "prepublishOnly": "yarn build:lib",
     "build": "tsc ./main.ts && node ./main.js",
     "build:lib": "rm -rf ./dist && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist",
