@@ -18,6 +18,8 @@ export enum LandFightStatus {
  *  地格归属状态
  */
 export enum LandStatus{
+    // 没有变更(保持当前状态不变)
+    nill = 'nill',
     // 自由地格
     unoccupied = 'unoccupied',
     // 被攻占地格

@@ -1,7 +1,7 @@
 /**
  * @TJS-type integer
  */
-export interface Int32 { };
+interface Int32 { };
 
 /**
  * 品质
@@ -69,7 +69,7 @@ export interface Placeable {
     /**
      * object config Id
      */
-    objectId: Int32;    
+    objectId: Int32;
 
     /**
      * can build land

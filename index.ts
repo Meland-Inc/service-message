@@ -7,3 +7,5 @@ export * from "./messages/School";
 export * from "./messages/User";
 
 export * from "./messages/Page";
+
+export * from "./messages/Placeable";
