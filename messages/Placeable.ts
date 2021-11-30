@@ -106,6 +106,22 @@ export interface Placeable {
     desc: string;
 }
 
+
+/**
+ * 第三方NFT信息结构
+ */
+ export interface ThirdPlaceableBuildTimeOut{
+    /**
+     *  Nft Id
+     */    
+    placeableId: string;
+
+    /**
+     * 名字（是否唯一） 
+     * */
+    timeOutSec: Int32;
+}
+
 /** 
  * 玩家所有的道具信息 返回消息结构
  */
@@ -130,7 +146,27 @@ export interface UserPlaceablesOutput {
      */
     thirdInfo: ThirdPlaceable[];
 
+    /**
+     * 第三方NFT 放置后的过期时间列表 
+     */
+    thirdTimeOut: ThirdPlaceableBuildTimeOut[];
 }
+
+/**
+ * 更新 第三方NFT   建造过期时间
+ */
+export interface UpdateThirdPlaceableBuildTimeOut{
+    /**
+     *  Nft Id
+     */    
+     placeableId: string;
+
+     /**
+      * 过期时间 单位 秒， 清空则给0 
+      * */
+     timeOutSec: Int32;
+}
+
 
 /** 
  * 玩家所有的道具信息 请求消息结构
