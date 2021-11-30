@@ -45,7 +45,6 @@ jobs:
       - run: |
           go version
           go get github.com/atombender/go-jsonschema/...
-          go install github.com/atombender/go-jsonschema/cmd/gojsonschema
           gojsonschema -p main schema.json > ./out/message.go
           
       - uses: peaceiris/actions-gh-pages@v3.7.3
