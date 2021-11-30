@@ -1,0 +1,59 @@
+name: Build docker image to Amazon ERC
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: ap-southeast-1
+
+jobs:
+  previousRuns:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  build-image:
+    name: Build container
+    runs-on: [self-hosted, linux]
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: setup-nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Setup yarn
+        run: npm install -g yarn
+
+      - run: |
+          yarn
+          yarn build
+
+      - uses: actions/setup-go@v2
+        with:
+          stable: 'false'
+          go-version: '1.16'
+      - run: |
+          go version
+          go get github.com/atombender/go-jsonschema/...
+          go install github.com/atombender/go-jsonschema/cmd/gojsonschema
+          gojsonschema -p main schema.json > ./out/message.go
+          
+      - uses: peaceiris/actions-gh-pages@v3.7.3
+        name: GitHub Pages Deploy
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: "out"
+          user_name: "meland bot"
+          user_email: "bot-noreply@meland.ai"
+
+          
