@@ -9,9 +9,6 @@ env:
   AWS_REGION: ap-southeast-1
 
 jobs:
-  previousRuns:
-    runs-on: [self-hosted, linux]
-
   build-image:
     name: Build container
     runs-on: ubuntu-18.04
