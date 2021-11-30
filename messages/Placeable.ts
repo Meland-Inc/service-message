@@ -51,7 +51,6 @@ export interface PlaceableSkill{
     level: Int32;  
 }
 
-
 /**
  * 道具信息数据结构
  */
@@ -60,7 +59,7 @@ export interface Placeable {
       *  Nft Id
       */    
     placeableId: string;
-   
+
     /**
      * Placeable Rarity   
      */
@@ -79,7 +78,48 @@ export interface Placeable {
     /**
      * skill list
      */
-    skillList: PlaceableSkill[];
+    skillList: PlaceableSkill[];   
+}
+
+/**
+ * 第三方NFT信息结构
+ */
+ export interface ThirdPlaceable{
+    /**
+     *  Nft Id
+     */    
+    placeableId: string;
+
+    /**
+     * 名字（是否唯一） 
+     * */
+    name: string;
+
+    /**
+     * 展示图片
+    */
+    resUrl: string;
+
+    /**
+     * 描述信息，
+    */
+    desc: string;
+}
+
+
+/**
+ * 第三方NFT信息结构
+ */
+ export interface ThirdPlaceableBuildTimeOut{
+    /**
+     *  Nft Id
+     */    
+    placeableId: string;
+
+    /**
+     * 名字（是否唯一） 
+     * */
+    timeOutSec: Int32;
 }
 
 /** 
@@ -97,10 +137,37 @@ export interface UserPlaceablesOutput {
     userId: string;
 
     /**
-     * 玩家道具信息 Placeable[]
+     * 玩家放置道具信息 Placeable[]
      */
     placeables: Placeable[];
+
+    /**
+     * 第三方NFT LIST 
+     */
+    thirdInfo: ThirdPlaceable[];
+
+    /**
+     * 第三方NFT 放置后的过期时间列表 
+     */
+    thirdTimeOut: ThirdPlaceableBuildTimeOut[];
 }
+
+/**
+ * 更新 第三方NFT   建造过期时间
+ */
+export interface UpdateThirdPlaceableBuildTimeOut{
+    /**
+     *  Nft Id
+     */    
+     placeableId: string;
+
+     /**
+      * 过期时间 单位 秒， 清空则给0 
+      * */
+     timeOutSec: Int32;
+}
+
+
 /** 
  * 玩家所有的道具信息 请求消息结构
  */
