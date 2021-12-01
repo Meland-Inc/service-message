@@ -212,11 +212,17 @@ func (j *UpdateThirdPlaceableBuildTimeOut) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["placeableId"]; !ok || v == nil {
 		return fmt.Errorf("field placeableId: required")
 	}
 	if v, ok := raw["timeOutSec"]; !ok || v == nil {
 		return fmt.Errorf("field timeOutSec: required")
+	}
+	if v, ok := raw["userId"]; !ok || v == nil {
+		return fmt.Errorf("field userId: required")
 	}
 	type Plain UpdateThirdPlaceableBuildTimeOut
 	var plain Plain
@@ -1499,11 +1505,17 @@ type ThirdPlaceableBuildTimeOut struct {
 
 // 更新 第三方NFT   建造过期时间
 type UpdateThirdPlaceableBuildTimeOut struct {
+	// 消息版本号
+	Etag Int321 `json:"etag"`
+
 	// Nft Id
 	PlaceableId string `json:"placeableId"`
 
 	// 过期时间 单位 秒， 清空则给0
 	TimeOutSec Int321 `json:"timeOutSec"`
+
+	// 归属用户id
+	UserId string `json:"userId"`
 }
 
 type User struct {
