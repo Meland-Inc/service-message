@@ -207,7 +207,7 @@ func (j *Sex_1) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *UpdateThirdPlaceableBuildTimeOut) UnmarshalJSON(b []byte) error {
+func (j *UpdateThirdNftTimeOut) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -215,8 +215,8 @@ func (j *UpdateThirdPlaceableBuildTimeOut) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["etag"]; !ok || v == nil {
 		return fmt.Errorf("field etag: required")
 	}
-	if v, ok := raw["placeableId"]; !ok || v == nil {
-		return fmt.Errorf("field placeableId: required")
+	if v, ok := raw["nftId"]; !ok || v == nil {
+		return fmt.Errorf("field nftId: required")
 	}
 	if v, ok := raw["timeOutSec"]; !ok || v == nil {
 		return fmt.Errorf("field timeOutSec: required")
@@ -224,33 +224,33 @@ func (j *UpdateThirdPlaceableBuildTimeOut) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain UpdateThirdPlaceableBuildTimeOut
+	type Plain UpdateThirdNftTimeOut
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = UpdateThirdPlaceableBuildTimeOut(plain)
+	*j = UpdateThirdNftTimeOut(plain)
 	return nil
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *ThirdPlaceableBuildTimeOut) UnmarshalJSON(b []byte) error {
+func (j *ThirdNftTimeOut) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["placeableId"]; !ok || v == nil {
-		return fmt.Errorf("field placeableId: required")
+	if v, ok := raw["nftId"]; !ok || v == nil {
+		return fmt.Errorf("field nftId: required")
 	}
 	if v, ok := raw["timeOutSec"]; !ok || v == nil {
 		return fmt.Errorf("field timeOutSec: required")
 	}
-	type Plain ThirdPlaceableBuildTimeOut
+	type Plain ThirdNftTimeOut
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = ThirdPlaceableBuildTimeOut(plain)
+	*j = ThirdNftTimeOut(plain)
 	return nil
 }
 
@@ -276,7 +276,7 @@ func (j *PlaceableSkill) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *ThirdPlaceable) UnmarshalJSON(b []byte) error {
+func (j *ThirdNft) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -287,18 +287,18 @@ func (j *ThirdPlaceable) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["name"]; !ok || v == nil {
 		return fmt.Errorf("field name: required")
 	}
-	if v, ok := raw["placeableId"]; !ok || v == nil {
-		return fmt.Errorf("field placeableId: required")
+	if v, ok := raw["nftId"]; !ok || v == nil {
+		return fmt.Errorf("field nftId: required")
 	}
 	if v, ok := raw["resUrl"]; !ok || v == nil {
 		return fmt.Errorf("field resUrl: required")
 	}
-	type Plain ThirdPlaceable
+	type Plain ThirdNft
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = ThirdPlaceable(plain)
+	*j = ThirdNft(plain)
 	return nil
 }
 
@@ -1480,7 +1480,7 @@ type TemporaryTokenExtraInfo struct {
 }
 
 // 第三方NFT信息结构
-type ThirdPlaceable struct {
+type ThirdNft struct {
 	// 描述信息，
 	Desc string `json:"desc"`
 
@@ -1488,28 +1488,28 @@ type ThirdPlaceable struct {
 	Name string `json:"name"`
 
 	// Nft Id
-	PlaceableId string `json:"placeableId"`
+	NftId string `json:"nftId"`
 
 	// 展示图片
 	ResUrl string `json:"resUrl"`
 }
 
 // 第三方NFT信息结构
-type ThirdPlaceableBuildTimeOut struct {
+type ThirdNftTimeOut struct {
 	// Nft Id
-	PlaceableId string `json:"placeableId"`
+	NftId string `json:"nftId"`
 
 	// 名字（是否唯一）
 	TimeOutSec Int321 `json:"timeOutSec"`
 }
 
 // 更新 第三方NFT   建造过期时间
-type UpdateThirdPlaceableBuildTimeOut struct {
+type UpdateThirdNftTimeOut struct {
 	// 消息版本号
 	Etag Int321 `json:"etag"`
 
 	// Nft Id
-	PlaceableId string `json:"placeableId"`
+	NftId string `json:"nftId"`
 
 	// 过期时间 单位 秒， 清空则给0
 	TimeOutSec Int321 `json:"timeOutSec"`
@@ -1577,10 +1577,10 @@ type UserPlaceablesOutput struct {
 	Placeables []Placeable `json:"placeables"`
 
 	// 第三方NFT LIST
-	ThirdInfo []ThirdPlaceable `json:"thirdInfo"`
+	ThirdInfo []ThirdNft `json:"thirdInfo"`
 
 	// 第三方NFT 放置后的过期时间列表
-	ThirdTimeOut []ThirdPlaceableBuildTimeOut `json:"thirdTimeOut"`
+	ThirdTimeOut []ThirdNftTimeOut `json:"thirdTimeOut"`
 
 	// 归属用户id
 	UserId string `json:"userId"`
