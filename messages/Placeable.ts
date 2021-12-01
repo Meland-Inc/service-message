@@ -177,6 +177,24 @@ export interface UpdateThirdNftTimeOut{
      timeOutSec: Int32;
 }
 
+// 添加用户第三方NFT道具
+export interface AddThridNft {
+    /**
+     * 消息版本号
+     */
+    etag: Int32;
+
+    /**
+     *  归属用户id
+     */
+    userId: string;
+
+    /**
+     * 道具信息
+     */
+    thirdNft: ThirdNft;
+}
+
 
 /** 
  * 玩家所有的道具信息 请求消息结构
@@ -189,7 +207,7 @@ export interface UserPlaceablesInput {
 }
 
 
-// 添加用户道具
+// 添加用户放置类道具
 export interface AddPlaceable {
     /**
      * 消息版本号
@@ -207,8 +225,8 @@ export interface AddPlaceable {
     placeables: Placeable;
 }
 
-// 删除用户道具
-export interface DeletePlaceable {
+// 删除用户NFT道具
+export interface DeleteNft {
     /**
      * 消息版本号
      */
@@ -222,7 +240,7 @@ export interface DeletePlaceable {
     /**
      *  Nft Id
      */    
-    placeableId: string;
+    nftId: string;
 }
 
 // 攻占地格 请求地格中产生效果的skill
