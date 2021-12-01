@@ -84,11 +84,11 @@ export interface Placeable {
 /**
  * 第三方NFT信息结构
  */
- export interface ThirdPlaceable{
+ export interface ThirdNft{
     /**
      *  Nft Id
      */    
-    placeableId: string;
+    nftId: string;
 
     /**
      * 名字（是否唯一） 
@@ -110,11 +110,11 @@ export interface Placeable {
 /**
  * 第三方NFT信息结构
  */
- export interface ThirdPlaceableBuildTimeOut{
+ export interface ThirdNftTimeOut{
     /**
      *  Nft Id
      */    
-    placeableId: string;
+    nftId: string;
 
     /**
      * 名字（是否唯一） 
@@ -144,18 +144,18 @@ export interface UserPlaceablesOutput {
     /**
      * 第三方NFT LIST 
      */
-    thirdInfo: ThirdPlaceable[];
+    thirdInfo: ThirdNft[];
 
     /**
      * 第三方NFT 放置后的过期时间列表 
      */
-    thirdTimeOut: ThirdPlaceableBuildTimeOut[];
+    thirdTimeOut: ThirdNftTimeOut[];
 }
 
 /**
  * 更新 第三方NFT   建造过期时间
  */
-export interface UpdateThirdPlaceableBuildTimeOut{
+export interface UpdateThirdNftTimeOut{
     /**
      * 消息版本号
      */
@@ -169,7 +169,7 @@ export interface UpdateThirdPlaceableBuildTimeOut{
     /**
      *  Nft Id
      */    
-     placeableId: string;
+     nftId: string;
 
      /**
       * 过期时间 单位 秒， 清空则给0 
