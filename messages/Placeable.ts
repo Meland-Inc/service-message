@@ -178,7 +178,7 @@ export interface UpdateThirdNftTimeOut{
 }
 
 // 添加用户第三方NFT道具
-export interface AddThridNft {
+export interface AddThirdNft {
     /**
      * 消息版本号
      */
