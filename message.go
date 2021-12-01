@@ -412,7 +412,7 @@ func (j *ThirdNft) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type AddThridNft struct {
+type AddThirdNft struct {
 	// 消息版本号
 	Etag Int321 `json:"etag"`
 
@@ -424,7 +424,7 @@ type AddThridNft struct {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *AddThridNft) UnmarshalJSON(b []byte) error {
+func (j *AddThirdNft) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -438,12 +438,12 @@ func (j *AddThridNft) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain AddThridNft
+	type Plain AddThirdNft
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = AddThridNft(plain)
+	*j = AddThirdNft(plain)
 	return nil
 }
 
