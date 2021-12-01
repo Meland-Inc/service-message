@@ -14,18 +14,24 @@ export enum PlaceableRarity {
     unique = 'unique'    
 }
 
-export interface PlaceableCanBuildInput{
+export interface NftCanBuildInput{
     /**
      *  Nft Id
      */    
-    placeableId: string;
+    nftId: string;
 
     /**
      *  归属用户id
      */
     userId: string;
+
+    /**
+     * 实体存活时间，对第三方NFT有效, 单位(秒)
+     */
+    aliveTimeSec: Int32;
 }
-export interface PlaceableCanBuildOutput{
+
+export interface NftCanBuildOutput{
     /**
      * 消息版本号
      */
@@ -34,7 +40,7 @@ export interface PlaceableCanBuildOutput{
     /**
      *  Nft Id
      */    
-    placeableId: string;
+    nftId: string;
 
     canBuild: boolean;
 }
