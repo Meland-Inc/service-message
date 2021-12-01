@@ -157,6 +157,16 @@ export interface UserPlaceablesOutput {
  */
 export interface UpdateThirdPlaceableBuildTimeOut{
     /**
+     * 消息版本号
+     */
+     etag: Int32;
+
+     /**
+      *  归属用户id
+      */
+     userId: string;
+
+    /**
      *  Nft Id
      */    
      placeableId: string;
