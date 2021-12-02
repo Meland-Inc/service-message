@@ -39,3 +39,22 @@ export interface TemporaryToken {
     updatedAt: Date;
     temporaryTokenExtraInfo?: TemporaryTokenExtraInfo;
 }
+
+// 玩家游戏数据查询
+export interface UserGameDataInput{
+    userId: string;
+}
+export interface UserGameDataOutput{
+    /**
+     * user id
+    */
+    userId: string;
+    /**
+     * 游戏角色ID
+    */
+    playreId: string;
+    /**
+     * game name
+    */
+    name: string;
+}
