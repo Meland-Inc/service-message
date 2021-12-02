@@ -52,7 +52,7 @@ export interface UserGameDataOutput{
     /**
      * 游戏角色ID
     */
-    playreId: string;
+    playerId: string;
     /**
      * game name
     */
