@@ -6,7 +6,7 @@ interface Int32 { };
 /**
  * 品质
  */
-export enum PlaceableRarity {
+export enum NFTRarity {
     common = 'common',
     rare = 'rare',
     epic = 'epic',
@@ -69,7 +69,7 @@ export interface Placeable {
     /**
      * Placeable Rarity   
      */
-    rarity: PlaceableRarity;
+    rarity: NFTRarity;
    
     /**
      * object config Id
@@ -114,9 +114,9 @@ export interface Placeable {
 
 
 /**
- * 第三方NFT信息结构
+ * 第三方NFT过期信息结构
  */
- export interface ThirdNftTimeOut{
+export interface ThirdNftTimeOut{
     /**
      *  Nft Id
      */    
@@ -126,6 +126,37 @@ export interface Placeable {
      * 名字（是否唯一） 
      * */
     timeOutSec: Int32;
+}
+
+/**
+ *  装备类NFT
+ */
+export interface WearableNFT{
+    /**
+     *  Nft Id
+     */    
+    nftId: string;
+
+    /**
+     * Placeable Rarity   
+     */
+    rarity: NFTRarity;
+       
+    /**
+     * object config Id
+     */
+    objectId: Int32;
+}
+
+
+/** 
+ * 玩家所有的道具信息 请求消息结构
+ */
+export interface UserPlaceablesInput {
+    /**
+     *  归属用户id
+     */
+    userId: string;
 }
 
 /** 
@@ -156,7 +187,34 @@ export interface UserPlaceablesOutput {
      * 第三方NFT 放置后的过期时间列表 
      */
     thirdTimeOut: ThirdNftTimeOut[];
+
+    /**
+     * 装备NFT LIST 
+     */   
+    wearables: WearableNFT[];
 }
+
+
+/** 
+ *添加用户第三方NFT道具
+ */
+ export interface AddWearableNFT {
+    /**
+     * 消息版本号
+     */
+    etag: Int32;
+
+    /**
+     *  归属用户id
+     */
+    userId: string;
+
+    /**
+     * 装备信息
+     */
+    wearable: WearableNFT;
+}
+
 
 /**
  * 更新 第三方NFT   建造过期时间
@@ -183,7 +241,9 @@ export interface UpdateThirdNftTimeOut{
      timeOutSec: Int32;
 }
 
-// 添加用户第三方NFT道具
+/** 
+ *添加用户第三方NFT道具
+ */
 export interface AddThirdNft {
     /**
      * 消息版本号
@@ -201,19 +261,9 @@ export interface AddThirdNft {
     thirdNft: ThirdNft;
 }
 
-
 /** 
- * 玩家所有的道具信息 请求消息结构
+ * 添加用户放置类道具
  */
-export interface UserPlaceablesInput {
-    /**
-     *  归属用户id
-     */
-    userId: string;
-}
-
-
-// 添加用户放置类道具
 export interface AddPlaceable {
     /**
      * 消息版本号
@@ -231,7 +281,9 @@ export interface AddPlaceable {
     placeables: Placeable;
 }
 
-// 删除用户NFT道具
+/** 
+ *删除用户NFT道具
+ */
 export interface DeleteNft {
     /**
      * 消息版本号
@@ -249,7 +301,9 @@ export interface DeleteNft {
     nftId: string;
 }
 
-// 攻占地格 请求地格中产生效果的skill
+/** 
+ * 攻占地格 请求地格中产生效果的skill
+ */
 export interface LandUsingSkillInput{
     /**
      * 消息版本号
@@ -267,7 +321,9 @@ export interface LandUsingSkillInput{
     userId: string
 }
 
-// 攻占地格 请求地格skill返回
+/** 
+ * 攻占地格 请求地格skill返回
+ */
 export interface LandUsingSkillOutput{
     /**
      * 消息版本号
