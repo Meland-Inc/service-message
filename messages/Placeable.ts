@@ -92,7 +92,7 @@ export interface Placeable {
  */
  export interface ThirdNft{
     /**
-     *  Nft Id
+     *  Nft Id = address + tokenId
      */    
     nftId: string;
 
@@ -110,6 +110,10 @@ export interface Placeable {
      * 描述信息，
     */
     desc: string;
+
+    tokenUrl: string;
+
+    tokenId: string;
 }
 
 
