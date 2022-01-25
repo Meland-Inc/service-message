@@ -254,6 +254,12 @@ func (j *ThirdNft) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["resUrl"]; !ok || v == nil {
 		return fmt.Errorf("field resUrl: required")
 	}
+	if v, ok := raw["tokenId"]; !ok || v == nil {
+		return fmt.Errorf("field tokenId: required")
+	}
+	if v, ok := raw["tokenUrl"]; !ok || v == nil {
+		return fmt.Errorf("field tokenUrl: required")
+	}
 	type Plain ThirdNft
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
@@ -1666,11 +1672,17 @@ type ThirdNft struct {
 	// 名字（是否唯一）
 	Name string `json:"name"`
 
-	// Nft Id
+	// Nft Id = address + tokenId
 	NftId string `json:"nftId"`
 
 	// 展示图片
 	ResUrl string `json:"resUrl"`
+
+	// TokenId corresponds to the JSON schema field "tokenId".
+	TokenId string `json:"tokenId"`
+
+	// TokenUrl corresponds to the JSON schema field "tokenUrl".
+	TokenUrl string `json:"tokenUrl"`
 }
 
 // 第三方NFT过期信息结构
