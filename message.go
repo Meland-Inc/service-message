@@ -1366,6 +1366,8 @@ type NFTAttribute struct {
 	Value string `json:"value"`
 }
 
+// NFT metadata源信息
+// https://docs.opensea.io/docs/metadata-standards
 type NFTMetadata_1 struct {
 	// NFT gif animation url
 	AnimationUrl *string `json:"animation_url,omitempty"`
