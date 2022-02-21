@@ -1,7 +1,7 @@
 export enum AppId {
-    meland = 'meland-service',
-    game = 'bellplanet-game',
-    web3 = 'web3-service',
+    "meland-service" = 'meland-service',
+    "bellplanet-game" = 'bellplanet-game',
+    "web3-service" = 'web3-service',
 }
 
 /// action 分为输入和输出
