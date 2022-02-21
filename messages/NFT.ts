@@ -46,6 +46,10 @@ export interface NFTAttribute {
     value: string;
 }
 
+/**
+ * NFT metadata源信息
+ * https://docs.opensea.io/docs/metadata-standards
+ */
 export interface NFTMetadata {
     /**
      * NFT name
