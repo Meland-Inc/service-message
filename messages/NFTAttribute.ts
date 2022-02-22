@@ -70,4 +70,8 @@ export enum NFTTrait_Type {
     MysteryBox = 'MysteryBox',
 
     Wearable = 'Wearable',
+
+    Equipment = 'Equipment', // 装备
+
+    Material = 'Material' // 材料
 }

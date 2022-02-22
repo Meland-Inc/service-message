@@ -5,7 +5,7 @@ interface Int32 extends Number { };
 
 export interface CanBuildNFTInput {
     /**
-     *  Nft Id
+     *  NFT Id
      */
     nftId: string;
 
@@ -43,6 +43,16 @@ export interface NFTAttribute {
 
     trait_type: string;
 
+    value: string;
+}
+
+/**
+ * 有一些配置表格的数据不希望显示在opensea中, 但是为了方便统一解析。
+ * 生成到这个表格中.
+ */
+export interface MelandAttribute {
+    trait_type: string;
+    
     value: string;
 }
 
@@ -91,9 +101,15 @@ export interface NFTMetadata {
      * NFT的额外属性.
      */
     attributes: NFTAttribute[];
+
+    /**
+     * NFT的原始数据. 只有meland.ai的NFT才会携带
+     * 基于策划的表格配置生成.
+     */
+    melandAttributes?: MelandAttribute[];
 }
 
-export interface NFT {
+export interface UserNFT {
     /**
      * 该NFT是否是Meland.ai官方NFT
      */
@@ -115,6 +131,11 @@ export interface NFT {
     address: string;
 
     /**
+     * NFT amount
+     */
+    amount: Int32;
+
+    /**
      * NFT metadata info
      * 目前的实现是, 如果是第三方NFT, 则metadata为空, 直接将tokenURL返回给前端解析即可.
      * example: https://nftmetadata-service-release.melandworld.com/placeable/80000031/1
@@ -128,14 +149,10 @@ export interface NFT {
     tokenURL: string;
 }
 
-export interface GetUserNFTsInput {
-    userId: string;
-}
-
 /**
  * NFT放置过期时间结构体
  */
-export interface NFTPlaceableTimeout {
+ export interface NFTPlaceableTimeout {
     /**
      *  NFT Id
      */
@@ -147,6 +164,10 @@ export interface NFTPlaceableTimeout {
     timeoutSec: Int32;
 }
 
+export interface GetUserNFTsInput {
+    userId: string;
+}
+
 export interface GetUserNFTsOutput {
     /**
      * 消息版本号
@@ -156,7 +177,7 @@ export interface GetUserNFTsOutput {
     /**
      * user all nfts
      */
-    nfts: NFT[];
+    nfts: UserNFT[];
 
     /**
      * NFT放置过期时间表
@@ -168,7 +189,7 @@ export interface GetUserNFTsOutput {
 /** 
  * 添加一个NFT
  */
-export interface AddUserNFT {
+export interface UpdateUserNFT {
     /**
      * 消息版本号
      */
@@ -182,27 +203,12 @@ export interface AddUserNFT {
     /**
      * 装备信息
      */
-    nft: NFT;
-}
-
-/** 
- * 删除NFT
- */
-export interface DeleteUserNFT {
-    /**
-     * 消息版本号
-     */
-    etag: Int32;
+    nft: UserNFT;
 
     /**
-     *  归属用户id
+     * 
      */
-    userId: string;
-
-    /**
-     * NFT id
-     */
-    nftId: string;
+    amount: Int32;
 }
 
 export interface MintNFTWithMetadataInput {
