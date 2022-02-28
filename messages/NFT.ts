@@ -292,24 +292,3 @@ export interface BatchMintNFTWithItemIdOutput {
     // 通过这个id可以查询事务状态
     txId: string;
 }
-
-export interface MergeByRecipeInput {
-    /**
-     * 图鉴id
-     */
-    recipeId: string;
-
-    /**
-     * 合成数量
-     */
-    amount: number;
-
-    /**
-     * 合成的用户
-     */
-    userId: string;
-}
-
-export interface MergeByRecipeOutput {
-
-}

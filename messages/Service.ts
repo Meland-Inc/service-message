@@ -36,6 +36,9 @@ export enum Web3ServiceAction {
 
     // 基于图鉴合并NFT
     MergeByRecipe = 'MergeByRecipe',
+
+    // 获取用户已经解锁的图鉴
+    GetUserRecipes = 'GetUserRecipes',
 }
 
 /**
