@@ -5,6 +5,9 @@ export enum NFTTraitTypes {
     // 描述NFT的稀有度.
     Rarity = 'Rarity',
 
+    // 描述NFT的品质.
+    Quality = 'Quality',
+
     // 描述NFT的系列.
     Series = 'Series',
 
@@ -12,12 +15,12 @@ export enum NFTTraitTypes {
     ItemId = 'ItemId',
 
     // 描述可穿戴物品的穿戴部位
-    WearingPosition = 'WearingPosition',
+    WearingPosition = 'Wearing Position',
 
     // 描述NFT可放置的地块
     // 以","分割.
     // 比如同时支持VIP, Occupied 表示为 "VIP,Occupied"
-    PlaceableLands = 'PlaceableLands',
+    PlaceableLands = 'Placeable Lands',
 
     // 描述NFT的核心技能
     CoreSkillId = 'CoreSkillId',
@@ -63,15 +66,33 @@ export enum NFTTrait_Rarity {
 
 /**
  * NFT 类型
+ *  装备
+Head Armor
+Chest Armor
+Legs Armor
+Feet Armor
+Hands Armor
+Sword
+Bow
+Dagger
+Spear
+Consumable
+Material
+Placeable
+MysteryBox
  */
 export enum NFTTrait_Type {
-    Placeable = 'Placeable',
-
-    MysteryBox = 'MysteryBox',
-
-    Wearable = 'Wearable',
-
-    Equipment = 'Equipment', // 装备
-
-    Material = 'Material' // 材料
+    HeadArmor = 'Head Armor', // 头部装备
+    ChestArmor = 'Chest Armor', // 胸部装备
+    LegsArmor = 'Legs Armor', // 腿部装备
+    FeetArmor = 'Feet Armor', // 脚部装备
+    HandsArmor = 'Hands Armor', // 手部装备
+    Sword = 'Sword', // 剑
+    Bow = 'Bow', // 弓
+    Dagger = 'Dagger', // 匕首
+    Spear = 'Spear', // 枪
+    Consumable = 'Consumable', // 消耗品
+    Material = 'Material', // 材料
+    Placeable = 'Placeable', // 可放置
+    MysteryBox = 'MysteryBox', // 神秘宝箱
 }

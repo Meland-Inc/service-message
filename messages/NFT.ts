@@ -109,7 +109,7 @@ export interface NFTMetadata {
     melandAttributes?: MelandAttribute[];
 }
 
-export interface UserNFT {
+export interface NFT {
     /**
      * 该NFT是否是Meland.ai官方NFT
      */
@@ -177,7 +177,7 @@ export interface GetUserNFTsOutput {
     /**
      * user all nfts
      */
-    nfts: UserNFT[];
+    nfts: NFT[];
 
     /**
      * NFT放置过期时间表
@@ -203,7 +203,7 @@ export interface UpdateUserNFT {
     /**
      * 装备信息
      */
-    nft: UserNFT;
+    nft: NFT;
 
     /**
      * 
@@ -222,7 +222,7 @@ export interface MintNFTWithMetadataInput {
     metadata: NFTMetadata;
 
     // count
-    mintCount: Int32;
+    amount: Int32;
 
     // 是否异步
     // 如果为true, 则不会立即返回mint结果, 而是通过事件通知
@@ -243,16 +243,20 @@ export interface MintNFTWithMetadataOutput {
 
 export interface MintNFTWithItemIdInput {
     // mint to user id
-    toUserId: string;
+    userId: string;
 
     // game user itemId, aka cid
     itemId: string;
 
+    // qualityVal
+    // int类型的品质
+    qualityVal: string;
+
     // count
-    mintCount: Int32;
+    amount: Int32;
 
     // 是否异步
-    // 如果为true, 则不会立即返回mint结果, 而是通过事件通知
+    // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
     async: boolean;
 }
 
@@ -265,4 +269,25 @@ export interface MintNFTWithItemIdOutput {
     // 事务id
     // 通过这个id可以查询事务状态
     txId: string;
+}
+
+export interface MergeByRecipeInput {
+    /**
+     * 图鉴id
+     */
+    recipeId: string;
+
+    /**
+     * 合成数量
+     */
+    amount: number;
+
+    /**
+     * 合成的用户
+     */
+    userId: string;
+}
+
+export interface MergeByRecipeOutput {
+
 }

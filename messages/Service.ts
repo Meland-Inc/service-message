@@ -11,7 +11,8 @@ export enum AppId {
 export enum MelandServiceAction {
     CanBuildNFT = 'CanBuildNFT',
     GetUserNFTs = 'GetUserNFTs',
-    GetInitLandAttributions = 'GetInitLandAttributions'
+    GetInitLandAttributions = 'GetInitLandAttributions',
+    GetUserWeb3Profile = 'GetUserWeb3Profile',
 }
 
 export enum GameServiceAction {
@@ -28,6 +29,9 @@ export enum Web3ServiceAction {
     // 这类的NFT属性是由产品配置表格决定的.
     // 同一个itemId的NFT属性一样.
     MintNFTWithItemId = 'MintNFTWithItemId',
+
+    // 基于图鉴合并NFT
+    MergeByRecipe = 'MergeByRecipe',
 }
 
 /**
