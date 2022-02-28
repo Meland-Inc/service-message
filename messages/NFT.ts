@@ -230,11 +230,6 @@ export interface MintNFTWithMetadataInput {
 }
 
 export interface MintNFTWithMetadataOutput {
-    /**
-     * 消息版本号
-     */
-    etag: Int32;
-
     // 事务id
     // 通过这个id可以查询事务状态
     txId: string;
@@ -261,11 +256,38 @@ export interface MintNFTWithItemIdInput {
 }
 
 export interface MintNFTWithItemIdOutput {
-    /**
-     * 消息版本号
-     */
-    etag: Int32;
+    // 事务id
+    // 通过这个id可以查询事务状态
+    txId: string;
+}
 
+export interface BatchMintNFTWithItemId {
+    // mint to user id
+    userId: string
+
+    /**
+     * 需要mint的所有的itemId
+     */
+    itemIds: string[];
+
+    /**
+     * index和itemIds一一对应
+     * 所有数量
+     */
+    amounts: Int32[];
+
+    /**
+     * 所有的品质
+     * index和itemIds一一对应
+     */
+    qualityVals: string[];
+
+    // 是否异步
+    // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
+    async: boolean;
+}
+
+export interface BatchMintNFTWithItemIdOutput {
     // 事务id
     // 通过这个id可以查询事务状态
     txId: string;

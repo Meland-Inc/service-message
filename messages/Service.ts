@@ -30,6 +30,10 @@ export enum Web3ServiceAction {
     // 同一个itemId的NFT属性一样.
     MintNFTWithItemId = 'MintNFTWithItemId',
 
+    // 批量mint nft
+    // 以节省网络开销
+    BatchMintNFTWithItemId = 'BatchMintNFTWithItemId',
+
     // 基于图鉴合并NFT
     MergeByRecipe = 'MergeByRecipe',
 }
