@@ -144,5 +144,6 @@ export enum NFTTrait_Type {
     Consumable = 'Consumable', // 消耗品
     Material = 'Material', // 材料
     Placeable = 'Placeable', // 可放置
+    Wearable = 'Wearable', // 可穿戴
     MysteryBox = 'MysteryBox', // 神秘宝箱
 }
