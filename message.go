@@ -7,32 +7,22 @@ import "reflect"
 import "encoding/json"
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *MultiLandAttributionUpdate) UnmarshalJSON(b []byte) error {
-	var raw map[string]interface{}
-	if err := json.Unmarshal(b, &raw); err != nil {
+func (j *NFTTraitTypes) UnmarshalJSON(b []byte) error {
+	var v string
+	if err := json.Unmarshal(b, &v); err != nil {
 		return err
 	}
-	if v, ok := raw["etag"]; !ok || v == nil {
-		return fmt.Errorf("field etag: required")
+	var ok bool
+	for _, expected := range enumValues_NFTTraitTypes {
+		if reflect.DeepEqual(v, expected) {
+			ok = true
+			break
+		}
 	}
-	if v, ok := raw["occupiedLandIds"]; !ok || v == nil {
-		return fmt.Errorf("field occupiedLandIds: required")
+	if !ok {
+		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitTypes, v)
 	}
-	if v, ok := raw["ticketLandIds"]; !ok || v == nil {
-		return fmt.Errorf("field ticketLandIds: required")
-	}
-	if v, ok := raw["userId"]; !ok || v == nil {
-		return fmt.Errorf("field userId: required")
-	}
-	if v, ok := raw["vipLandIds"]; !ok || v == nil {
-		return fmt.Errorf("field vipLandIds: required")
-	}
-	type Plain MultiLandAttributionUpdate
-	var plain Plain
-	if err := json.Unmarshal(b, &plain); err != nil {
-		return err
-	}
-	*j = MultiLandAttributionUpdate(plain)
+	*j = NFTTraitTypes(v)
 	return nil
 }
 
@@ -342,12 +332,9 @@ func (j *GameServiceAction) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type AppId string
+const GameServiceActionLandUsingSkill GameServiceAction = "LandUsingSkill"
 
-type GetUserNFTsInput struct {
-	// UserId corresponds to the JSON schema field "userId".
-	UserId string `json:"userId"`
-}
+type AppId string
 
 // UnmarshalJSON implements json.Unmarshaler.
 func (j *GetUserNFTsInput) UnmarshalJSON(b []byte) error {
@@ -545,8 +532,14 @@ func (j *NFT) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["isMelandAI"]; !ok || v == nil {
 		return fmt.Errorf("field isMelandAI: required")
 	}
+	if v, ok := raw["itemId"]; !ok || v == nil {
+		return fmt.Errorf("field itemId: required")
+	}
 	if v, ok := raw["metadata"]; !ok || v == nil {
 		return fmt.Errorf("field metadata: required")
+	}
+	if v, ok := raw["network"]; !ok || v == nil {
+		return fmt.Errorf("field network: required")
 	}
 	if v, ok := raw["tokenId"]; !ok || v == nil {
 		return fmt.Errorf("field tokenId: required")
@@ -1343,7 +1336,10 @@ func (j *MintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-const GameServiceActionLandUsingSkill GameServiceAction = "LandUsingSkill"
+type MintNFTWithItemIdOutput struct {
+	// TxId corresponds to the JSON schema field "txId".
+	TxId string `json:"txId"`
+}
 
 // UnmarshalJSON implements json.Unmarshaler.
 func (j *MintNFTWithItemIdOutput) UnmarshalJSON(b []byte) error {
@@ -1363,24 +1359,21 @@ func (j *MintNFTWithItemIdOutput) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// UnmarshalJSON implements json.Unmarshaler.
-func (j *NFTTraitRarity) UnmarshalJSON(b []byte) error {
-	var v string
-	if err := json.Unmarshal(b, &v); err != nil {
-		return err
-	}
-	var ok bool
-	for _, expected := range enumValues_NFTTraitRarity {
-		if reflect.DeepEqual(v, expected) {
-			ok = true
-			break
-		}
-	}
-	if !ok {
-		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitRarity, v)
-	}
-	*j = NFTTraitRarity(v)
-	return nil
+type MintNFTWithMetadataInput struct {
+	// Amount corresponds to the JSON schema field "amount".
+	Amount Int321 `json:"amount"`
+
+	// Async corresponds to the JSON schema field "async".
+	Async bool `json:"async"`
+
+	// ItemId corresponds to the JSON schema field "itemId".
+	ItemId string `json:"itemId"`
+
+	// Metadata corresponds to the JSON schema field "metadata".
+	Metadata NFTMetadata_1 `json:"metadata"`
+
+	// ToUserId corresponds to the JSON schema field "toUserId".
+	ToUserId string `json:"toUserId"`
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
@@ -1413,24 +1406,9 @@ func (j *MintNFTWithMetadataInput) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// UnmarshalJSON implements json.Unmarshaler.
-func (j *NFTTraitPlaceableLands) UnmarshalJSON(b []byte) error {
-	var v string
-	if err := json.Unmarshal(b, &v); err != nil {
-		return err
-	}
-	var ok bool
-	for _, expected := range enumValues_NFTTraitPlaceableLands {
-		if reflect.DeepEqual(v, expected) {
-			ok = true
-			break
-		}
-	}
-	if !ok {
-		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitPlaceableLands, v)
-	}
-	*j = NFTTraitPlaceableLands(v)
-	return nil
+type GetUserNFTsInput struct {
+	// UserId corresponds to the JSON schema field "userId".
+	UserId string `json:"userId"`
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
@@ -1452,45 +1430,93 @@ func (j *MintNFTWithMetadataOutput) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *NFTTraitTypes) UnmarshalJSON(b []byte) error {
+func (j *NFTTraitRarity) UnmarshalJSON(b []byte) error {
 	var v string
 	if err := json.Unmarshal(b, &v); err != nil {
 		return err
 	}
 	var ok bool
-	for _, expected := range enumValues_NFTTraitTypes {
+	for _, expected := range enumValues_NFTTraitRarity {
 		if reflect.DeepEqual(v, expected) {
 			ok = true
 			break
 		}
 	}
 	if !ok {
-		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitTypes, v)
+		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitRarity, v)
 	}
-	*j = NFTTraitTypes(v)
+	*j = NFTTraitRarity(v)
 	return nil
 }
 
-type MintNFTWithItemIdOutput struct {
-	// TxId corresponds to the JSON schema field "txId".
-	TxId string `json:"txId"`
+// UnmarshalJSON implements json.Unmarshaler.
+func (j *MultiLandAttributionUpdate) UnmarshalJSON(b []byte) error {
+	var raw map[string]interface{}
+	if err := json.Unmarshal(b, &raw); err != nil {
+		return err
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
+	if v, ok := raw["occupiedLandIds"]; !ok || v == nil {
+		return fmt.Errorf("field occupiedLandIds: required")
+	}
+	if v, ok := raw["ticketLandIds"]; !ok || v == nil {
+		return fmt.Errorf("field ticketLandIds: required")
+	}
+	if v, ok := raw["userId"]; !ok || v == nil {
+		return fmt.Errorf("field userId: required")
+	}
+	if v, ok := raw["vipLandIds"]; !ok || v == nil {
+		return fmt.Errorf("field vipLandIds: required")
+	}
+	type Plain MultiLandAttributionUpdate
+	var plain Plain
+	if err := json.Unmarshal(b, &plain); err != nil {
+		return err
+	}
+	*j = MultiLandAttributionUpdate(plain)
+	return nil
 }
 
-type MintNFTWithMetadataInput struct {
-	// Amount corresponds to the JSON schema field "amount".
-	Amount Int321 `json:"amount"`
+// UnmarshalJSON implements json.Unmarshaler.
+func (j *NFTTraitQuality) UnmarshalJSON(b []byte) error {
+	var v string
+	if err := json.Unmarshal(b, &v); err != nil {
+		return err
+	}
+	var ok bool
+	for _, expected := range enumValues_NFTTraitQuality {
+		if reflect.DeepEqual(v, expected) {
+			ok = true
+			break
+		}
+	}
+	if !ok {
+		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitQuality, v)
+	}
+	*j = NFTTraitQuality(v)
+	return nil
+}
 
-	// Async corresponds to the JSON schema field "async".
-	Async bool `json:"async"`
-
-	// ItemId corresponds to the JSON schema field "itemId".
-	ItemId string `json:"itemId"`
-
-	// Metadata corresponds to the JSON schema field "metadata".
-	Metadata NFTMetadata_1 `json:"metadata"`
-
-	// ToUserId corresponds to the JSON schema field "toUserId".
-	ToUserId string `json:"toUserId"`
+// UnmarshalJSON implements json.Unmarshaler.
+func (j *NFTTraitPlaceableLands) UnmarshalJSON(b []byte) error {
+	var v string
+	if err := json.Unmarshal(b, &v); err != nil {
+		return err
+	}
+	var ok bool
+	for _, expected := range enumValues_NFTTraitPlaceableLands {
+		if reflect.DeepEqual(v, expected) {
+			ok = true
+			break
+		}
+	}
+	if !ok {
+		return fmt.Errorf("invalid value (expected one of %#v): %#v", enumValues_NFTTraitPlaceableLands, v)
+	}
+	*j = NFTTraitPlaceableLands(v)
+	return nil
 }
 
 type MintNFTWithMetadataOutput struct {
@@ -1528,12 +1554,18 @@ type NFT struct {
 	// 该NFT是否是Meland.ai官方NFT
 	IsMelandAI bool `json:"isMelandAI"`
 
+	// 只有当isMelandAI为true时, 才存在, 否则为空字符串
+	ItemId string `json:"itemId"`
+
 	// NFT metadata info
 	// 目前的实现是, 如果是第三方NFT, 则metadata为空,
 	// 直接将tokenURL返回给前端解析即可.
 	// example:
 	// https://nftmetadata-service-release.melandworld.com/placeable/80000031/1
 	Metadata NFTMetadata_1 `json:"metadata"`
+
+	// 描述当前nft存储于那条链上
+	Network string `json:"network"`
 
 	// NFT token id
 	TokenId string `json:"tokenId"`
@@ -1612,6 +1644,14 @@ const NFTTraitPlaceableLandsOccupied NFTTraitPlaceableLands = "Occupied"
 const NFTTraitPlaceableLandsTicket NFTTraitPlaceableLands = "Ticket"
 const NFTTraitPlaceableLandsVIP NFTTraitPlaceableLands = "VIP"
 
+type NFTTraitQuality string
+
+const NFTTraitQualityAdvanced NFTTraitQuality = "Advanced"
+const NFTTraitQualityBasic NFTTraitQuality = "Basic"
+const NFTTraitQualityEnhanced NFTTraitQuality = "Enhanced"
+const NFTTraitQualitySuper NFTTraitQuality = "Super"
+const NFTTraitQualityUltimate NFTTraitQuality = "Ultimate"
+
 type NFTTraitRarity string
 
 const NFTTraitRarityCommon NFTTraitRarity = "common"
@@ -1641,7 +1681,6 @@ const NFTTraitTypeSword NFTTraitType = "Sword"
 type NFTTraitTypes string
 
 const NFTTraitTypesCoreSkillId NFTTraitTypes = "CoreSkillId"
-const NFTTraitTypesItemId NFTTraitTypes = "ItemId"
 const NFTTraitTypesPlaceableLands NFTTraitTypes = "Placeable Lands"
 const NFTTraitTypesQuality NFTTraitTypes = "Quality"
 const NFTTraitTypesRarity NFTTraitTypes = "Rarity"
@@ -1712,15 +1751,16 @@ type TemporaryTokenExtraInfo struct {
 	UserId string `json:"userId"`
 }
 
-// 添加一个NFT
+// 更新用户的NFT
+// 可能是添加或者数量变更.
 type UpdateUserNFT struct {
-	// Amount corresponds to the JSON schema field "amount".
+	// NFT的数量
 	Amount Int321 `json:"amount"`
 
 	// 消息版本号
 	Etag Int321 `json:"etag"`
 
-	// 装备信息
+	// NFT信息
 	Nft NFT `json:"nft"`
 
 	// 归属用户id
@@ -1853,6 +1893,13 @@ var enumValues_NFTTraitPlaceableLands = []interface{}{
 	"Ticket",
 	"VIP",
 }
+var enumValues_NFTTraitQuality = []interface{}{
+	"Advanced",
+	"Basic",
+	"Enhanced",
+	"Super",
+	"Ultimate",
+}
 var enumValues_NFTTraitRarity = []interface{}{
 	"common",
 	"epic",
@@ -1877,7 +1924,6 @@ var enumValues_NFTTraitType = []interface{}{
 }
 var enumValues_NFTTraitTypes = []interface{}{
 	"CoreSkillId",
-	"ItemId",
 	"Placeable Lands",
 	"Quality",
 	"Rarity",
