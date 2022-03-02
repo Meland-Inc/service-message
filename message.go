@@ -1560,8 +1560,8 @@ func (j *MultiUpdateUserNFT) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["etag"]; !ok || v == nil {
 		return fmt.Errorf("field etag: required")
 	}
-	if v, ok := raw["nft"]; !ok || v == nil {
-		return fmt.Errorf("field nft: required")
+	if v, ok := raw["nfts"]; !ok || v == nil {
+		return fmt.Errorf("field nfts: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
@@ -1640,7 +1640,7 @@ type MultiUpdateUserNFT struct {
 	Etag Int321 `json:"etag"`
 
 	// NFT信息
-	Nft NFT `json:"nft"`
+	Nfts []NFT `json:"nfts"`
 
 	// 归属用户id
 	UserId string `json:"userId"`
