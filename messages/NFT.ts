@@ -231,7 +231,7 @@ export interface MultiUpdateUserNFT {
     /**
      * NFT信息
      */
-    nft: NFT;
+    nfts: NFT[];
 }
 
 export interface MintNFTWithMetadataInput {
