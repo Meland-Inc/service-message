@@ -62,4 +62,7 @@ export enum SubscriptionEvent {
     // 删除
     // 增加都是这个协议
     UpdateUserNFT = 'UpdateUserNFT',
+
+    // 批量用户NFT变更
+    MultiUpdateUserNFT = 'MultiUpdateUserNFT',
 }

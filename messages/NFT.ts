@@ -52,7 +52,7 @@ export interface NFTAttribute {
  */
 export interface MelandAttribute {
     trait_type: string;
-    
+
     value: string;
 }
 
@@ -162,7 +162,7 @@ export interface NFT {
 /**
  * NFT放置过期时间结构体
  */
- export interface NFTPlaceableTimeout {
+export interface NFTPlaceableTimeout {
     /**
      *  NFT Id
      */
@@ -215,11 +215,23 @@ export interface UpdateUserNFT {
      * NFT信息
      */
     nft: NFT;
+}
+
+export interface MultiUpdateUserNFT {
+    /**
+     * 消息版本号
+     */
+    etag: Int32;
 
     /**
-     * NFT的数量
+     *  归属用户id
      */
-    amount: Int32;
+    userId: string;
+
+    /**
+     * NFT信息
+     */
+    nft: NFT;
 }
 
 export interface MintNFTWithMetadataInput {
