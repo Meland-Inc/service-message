@@ -19,15 +19,15 @@ export enum LandFightStatus {
  */
 export enum LandStatus{
     // 没有变更(保持当前状态不变)
-    nill = 'nill',
+    nill = 'Nill',
     // 自由地格
-    unoccupied = 'unoccupied',
+    unoccupied = 'Unoccupied',
     // 被攻占地格
-    occupied = 'occupied',
+    occupied = 'Occupied',
     // 门票地格
-    ticket = 'ticket',
+    ticket = 'Ticket',
     // VIP地格(购买的地格)
-    vip = 'vip'
+    vip = 'VIP'
 }
 
 /**
