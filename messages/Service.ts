@@ -55,9 +55,8 @@ export enum SubscriptionEvent {
     // 多个领地归属变更
     MultiLandAttributionUpdate = 'MultiLandAttributionUpdate',
 
-    // NFT从用户删除
-    DeleteUserNFT = 'DeleteUserNFT',
-
-    // NFT添加给用户
-    AddUserNFT = 'AddUserNFT',
+    // 用户NFT变更
+    // 删除
+    // 增加都是这个协议
+    UpdateUserNFT = 'UpdateUserNFT',
 }
