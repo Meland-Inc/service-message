@@ -935,11 +935,11 @@ func (j *LandStatus) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-const LandStatusNill LandStatus = "nill"
-const LandStatusOccupied LandStatus = "occupied"
-const LandStatusTicket LandStatus = "ticket"
-const LandStatusUnoccupied LandStatus = "unoccupied"
-const LandStatusVip LandStatus = "vip"
+const LandStatusNill LandStatus = "Nill"
+const LandStatusOccupied LandStatus = "Occupied"
+const LandStatusTicket LandStatus = "Ticket"
+const LandStatusUnoccupied LandStatus = "Unoccupied"
+const LandStatusVIP LandStatus = "VIP"
 
 type LandAttributionUpdate struct {
 	// 消息版本号
@@ -1154,11 +1154,11 @@ func (j *LandStatus_1) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-const LandStatus_1_Nill LandStatus_1 = "nill"
-const LandStatus_1_Occupied LandStatus_1 = "occupied"
-const LandStatus_1_Ticket LandStatus_1 = "ticket"
-const LandStatus_1_Unoccupied LandStatus_1 = "unoccupied"
-const LandStatus_1_Vip LandStatus_1 = "vip"
+const LandStatus_1_Nill LandStatus_1 = "Nill"
+const LandStatus_1_Occupied LandStatus_1 = "Occupied"
+const LandStatus_1_Ticket LandStatus_1 = "Ticket"
+const LandStatus_1_Unoccupied LandStatus_1 = "Unoccupied"
+const LandStatus_1_VIP LandStatus_1 = "VIP"
 
 // 攻占地格 请求地格中产生效果的skill
 type LandUsingSkillInput struct {
@@ -1983,18 +1983,18 @@ var enumValues_LandFightStatus_1 = []interface{}{
 	"normal",
 }
 var enumValues_LandStatus = []interface{}{
-	"nill",
-	"occupied",
-	"ticket",
-	"unoccupied",
-	"vip",
+	"Nill",
+	"Occupied",
+	"Ticket",
+	"Unoccupied",
+	"VIP",
 }
 var enumValues_LandStatus_1 = []interface{}{
-	"nill",
-	"occupied",
-	"ticket",
-	"unoccupied",
-	"vip",
+	"Nill",
+	"Occupied",
+	"Ticket",
+	"Unoccupied",
+	"VIP",
 }
 var enumValues_MelandServiceAction = []interface{}{
 	"BurnDitamin",
