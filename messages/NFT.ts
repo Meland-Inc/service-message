@@ -116,6 +116,16 @@ export interface NFT {
     isMelandAI: boolean;
 
     /**
+     * 只有当isMelandAI为true时, 才存在, 否则为空字符串
+     */
+    itemId: string;
+
+    /**
+     * 描述当前nft存储于那条链上
+     */
+    network: string;
+
+    /**
      * NFT id
      */
     id: string;
@@ -187,7 +197,8 @@ export interface GetUserNFTsOutput {
 
 
 /** 
- * 添加一个NFT
+ * 更新用户的NFT
+ * 可能是添加或者数量变更.
  */
 export interface UpdateUserNFT {
     /**
@@ -201,12 +212,12 @@ export interface UpdateUserNFT {
     userId: string;
 
     /**
-     * 装备信息
+     * NFT信息
      */
     nft: NFT;
 
     /**
-     * 
+     * NFT的数量
      */
     amount: Int32;
 }

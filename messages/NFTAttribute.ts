@@ -11,9 +11,6 @@ export enum NFTTraitTypes {
     // 描述NFT的系列.
     Series = 'Series',
 
-    // 描述NFT的game cid
-    ItemId = 'ItemId',
-
     // 描述可穿戴物品的穿戴部位
     WearingPosition = 'Wearing Position',
 
@@ -62,6 +59,19 @@ export enum NFTTrait_Rarity {
     epic = 'epic',
     rare = 'rare',
     common = 'common',
+}
+
+// - 1：Basic
+// - 2：Enhanced
+// - 3：Advanced
+// - 4：Super
+// - 5：Ultimate
+export enum NFTTrait_Quality {
+    Basic = 'Basic',
+    Enhanced = 'Enhanced',
+    Advanced = 'Advanced',
+    Super = 'Super',
+    Ultimate = 'Ultimate',
 }
 
 /**
