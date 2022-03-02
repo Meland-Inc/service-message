@@ -1,3 +1,15 @@
+// MaxHP=gearAddHp
+// HP Recovery=gearAddHpRec
+// Attack=gearAddAtt
+// Attack Speed=gearAddAttSpd
+// Defence=gearAddDef
+// Crit Points=gearAddCritRate
+// Crit Damage=gearAddCritDmg
+// Hit Points=gearAddHitPoint
+// Dodge Points=gearAddMissPoint
+// Move Speed=gearAddSpeed
+// Restore HP=addHp
+// Learn Recipe=unlockPic
 export enum NFTTraitTypes {
     // 描述NFT的类型
     Type = 'Type',
@@ -24,6 +36,34 @@ export enum NFTTraitTypes {
 
     // 描述NFT的技能等级
     SkillLevel = 'SkillLevel',
+
+
+    // NFT 对应的属性加成
+    MaxHP = 'MaxHP',
+
+    HPRecovery = 'HP Recovery',
+
+    Attack = 'Attack',
+
+    AttackSpeed = 'Attack Speed',
+
+    Defence = 'Defence',
+
+    CritPoints = 'Crit Points',
+
+    CritDamage = 'Crit Damage',
+
+    HitPoints = 'Hit Points',
+
+    DodgePoints = 'Dodge Points',
+
+    MoveSpeed = 'Move Speed',
+
+    // 回血
+    RestoreHP = 'Restore HP',
+
+    // 学习图鉴
+    LearnRecipe = 'Learn Recipe',
 }
 
 export enum NFTTrait_WearingPosition {
