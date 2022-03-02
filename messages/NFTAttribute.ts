@@ -66,8 +66,17 @@ export enum NFTTraitTypes {
     LearnRecipe = 'Learn Recipe',
 }
 
+// Head
+// Upper body
+// Lower body
+// Shoes
+// Gloves
 export enum NFTTrait_WearingPosition {
-
+    Head = 'Head',
+    UpperBody = 'Upper Body',
+    LowerBody = 'Lower Body',
+    Shoes = 'Shoes',
+    Gloves = 'Gloves',
 }
 
 export enum NFTTrait_SkillLevel {
