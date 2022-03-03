@@ -50,8 +50,12 @@ export interface UserLandInfo {
     occupiedLands: Int32[];
 }
 
+export interface GetInitLandAttributionsInput {
+    
+}
+
 // 初始化land归属权时的结构
-export interface InitLandAttribution {
+export interface GetInitLandAttributionsOutput {
     /**
      * 消息版本号
      */
