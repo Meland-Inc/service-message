@@ -236,7 +236,7 @@ export interface MultiUpdateUserNFT {
 
 export interface MintNFTWithMetadataInput {
     // mint to user id
-    toUserId: string;
+    userId: string;
 
     // game user itemId, aka cid
     itemId: string;
@@ -314,4 +314,45 @@ export interface BatchMintNFTWithItemIdOutput {
     // 事务id
     // 通过这个id可以查询事务状态
     txId: string;
+}
+
+export interface UseConsumableInput {
+    /**
+     * 使用消耗品的用户
+     */
+    userId: string
+
+    /**
+     * 消耗品的id
+     */
+    nftId: string;
+}
+
+export interface UseConsumableOutput {
+    // 是否使用成功
+    success: boolean;
+}
+
+export interface BurnNFTInput {
+    /**
+     * 用户id
+     */
+    userId: string
+
+    /**
+     * 丢弃的NFTId
+     */
+    nftId: string
+
+    /**
+     * 丢弃的数量
+     */
+    amount: Int32
+}
+
+export interface BurnNFTOutput {
+    /**
+     * 是否丢弃成功
+     */
+    success: boolean;
 }
