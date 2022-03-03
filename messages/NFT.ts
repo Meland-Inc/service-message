@@ -1,7 +1,7 @@
 /**
  * @TJS-type integer
  */
-interface Int32 extends Number { };
+type Int32 = number;
 
 export interface CanBuildNFTInput {
     /**

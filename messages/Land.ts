@@ -1,7 +1,7 @@
 /**
  * @TJS-type integer
  */
-export interface Int32 { };
+type Int32 = number;
 
 /**
  * 地块战斗状态

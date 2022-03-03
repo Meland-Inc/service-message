@@ -15,3 +15,5 @@ export * from "./messages/Service";
 export * from "./messages/Web3";
 
 export * from "./messages/Recipe";
+
+export * from './messages/Ditamin';
