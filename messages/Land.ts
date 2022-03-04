@@ -35,18 +35,27 @@ export enum LandStatus{
  * 玩家地格信息数据结构
  */
 export interface UserLandInfo {
-     /**
-      *  购买的地格
-      */    
+    /**
+     * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
+     */
     vipLands: integer[];
    
     /**
-     *  门票地格
-    */
+     * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
+     */
     ticketLands: integer[];
    
     /**
-     * 攻占的地格
+     * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
      */
     occupiedLands: integer[];
 }
@@ -85,9 +94,26 @@ export interface MultiLandAttributionUpdate {
 
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
      */
     vipLandIds: integer[]
+
+    /**
+     * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
+     */
     ticketLandIds: integer[]
+
+    /**
+     * landId = 地格坐标R*10000 + 地格坐标C
+     *
+     * @items.type integer
+     * @items.minimum 0
+     */
     occupiedLandIds: integer[]
 }
 

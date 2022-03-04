@@ -297,6 +297,8 @@ export interface BatchMintNFTWithItemId {
     /**
      * index和itemIds一一对应
      * 所有数量
+     * @items.type integer
+     * @items.minimum 0
      */
     amounts: integer[];
 
