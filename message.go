@@ -1986,7 +1986,7 @@ const NFTTraitWearingPositionUpperBody NFTTraitWearingPosition = "Upper Body"
 
 type PageMeta struct {
 	// Count corresponds to the JSON schema field "count".
-	Count float64 `json:"count"`
+	Count int `json:"count"`
 }
 
 type Sex string
