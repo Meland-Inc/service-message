@@ -356,3 +356,19 @@ export interface BurnNFTOutput {
      */
     success: boolean;
 }
+
+export interface GetUserNFTsByUserIdAndAddressInput {
+    /**
+     * 用户id
+     */
+    userId: string;
+
+    /**
+     * 用户钱包地址
+     */
+    blockchainAddress: string;
+}
+
+export interface GetUserNFTsByUserIdAndAddressOutput {
+    nfts: NFT[];
+}
