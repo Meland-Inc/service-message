@@ -1,7 +1,8 @@
 /**
  * @TJS-type integer
  */
-export type integer = number;
+ type Int32 = number;
+ type integer = Int32;
 
 export interface Skill{  
     /**

@@ -1,4 +1,8 @@
-export type integer = number;
+/**
+ * @TJS-type integer
+ */
+ type Int32 = number;
+ type integer = Int32;
 
 export interface GetUserRecipesInput {
     userId: string;
