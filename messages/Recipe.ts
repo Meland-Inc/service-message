@@ -1,3 +1,5 @@
+export type integer = number;
+
 export interface GetUserRecipesInput {
     userId: string;
 }
@@ -15,7 +17,7 @@ export interface MergeByRecipeInput {
     /**
      * 合成数量
      */
-    amount: number;
+    amount: integer;
 
     /**
      * 合成的用户

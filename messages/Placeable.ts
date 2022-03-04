@@ -1,18 +1,18 @@
 /**
  * @TJS-type integer
  */
- export type Int32 = number;
+export type integer = number;
 
 export interface Skill{  
     /**
      *  skill Id,  only key
      */     
-    skillId: Int32;
+    skillId: integer;
 
     /**
      *  skill level 
      */   
-    level: Int32;  
+    level: integer;  
 }
 
 /** 
@@ -22,12 +22,12 @@ export interface LandUsingSkillInput{
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      *  地格ID
      */
-    tileId: Int32;
+    tileId: integer;
 
     /**
      *  攻占者ID
@@ -42,12 +42,12 @@ export interface LandUsingSkillOutput{
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      *  地格ID
      */
-    tileId: Int32;
+    tileId: integer;
 
     /**
      *  攻占者ID

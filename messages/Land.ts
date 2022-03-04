@@ -2,6 +2,7 @@
  * @TJS-type integer
  */
 type Int32 = number;
+type integer = Int32;
 
 /**
  * 地块战斗状态
@@ -37,21 +38,21 @@ export interface UserLandInfo {
      /**
       *  购买的地格
       */    
-    vipLands: Int32[];
+    vipLands: integer[];
    
     /**
      *  门票地格
     */
-    ticketLands: Int32[];
+    ticketLands: integer[];
    
     /**
      * 攻占的地格
      */
-    occupiedLands: Int32[];
+    occupiedLands: integer[];
 }
 
 export interface GetInitLandAttributionsInput {
-    
+
 }
 
 // 初始化land归属权时的结构
@@ -59,7 +60,7 @@ export interface GetInitLandAttributionsOutput {
     /**
      * 消息版本号
      */
-    etag: Int32,
+    etag: integer,
 
     /**
      * 玩家地格信息 userId = UserLandInfo
@@ -75,7 +76,7 @@ export interface MultiLandAttributionUpdate {
     /**
      * 消息版本号
      */
-    etag: Int32
+    etag: integer
 
     /**
      *  归属用户id
@@ -85,9 +86,9 @@ export interface MultiLandAttributionUpdate {
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
      */
-    vipLandIds: Int32[]
-    ticketLandIds: Int32[]
-    occupiedLandIds: Int32[]
+    vipLandIds: integer[]
+    ticketLandIds: integer[]
+    occupiedLandIds: integer[]
 }
 
 // land 战斗状态变更消息
@@ -95,12 +96,12 @@ export interface LandFightStatusUpdate {
     /**
      * 消息版本号
      */
-    etag: Int32,
+    etag: integer,
 
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
      */
-    landId: Int32,
+    landId: integer,
 
     /**
      * 进攻地块的用户id
@@ -118,7 +119,7 @@ export interface LandAttributionUpdate {
     /**
      * 消息版本号
      */
-    etag: Int32,
+    etag: integer,
 
     /**
      * 归属用户id
@@ -128,7 +129,7 @@ export interface LandAttributionUpdate {
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
      */
-    landId: Int32;
+    landId: integer;
 
      /** 
      * 地格新的归属状态 

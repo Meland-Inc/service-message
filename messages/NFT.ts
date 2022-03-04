@@ -1,7 +1,7 @@
 /**
  * @TJS-type integer
  */
-type Int32 = number;
+type integer = number;
 
 export interface CanBuildNFTInput {
     /**
@@ -17,7 +17,7 @@ export interface CanBuildNFTInput {
     /**
      * 实体存活时间，对第三方NFT有效, 单位(秒)
      */
-    aliveTimeSec: Int32;
+    aliveTimeSec: integer;
 }
 
 
@@ -25,7 +25,7 @@ export interface CanBuildNFTOutput {
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      * NFT id
@@ -143,7 +143,7 @@ export interface NFT {
     /**
      * NFT amount
      */
-    amount: Int32;
+    amount: integer;
 
     /**
      * NFT metadata info
@@ -171,7 +171,7 @@ export interface NFTPlaceableTimeout {
     /**
      * 名字（是否唯一） 
      * */
-    timeoutSec: Int32;
+    timeoutSec: integer;
 }
 
 export interface GetUserNFTsInput {
@@ -182,7 +182,7 @@ export interface GetUserNFTsOutput {
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      * user all nfts
@@ -204,7 +204,7 @@ export interface UpdateUserNFT {
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      *  归属用户id
@@ -221,7 +221,7 @@ export interface MultiUpdateUserNFT {
     /**
      * 消息版本号
      */
-    etag: Int32;
+    etag: integer;
 
     /**
      *  归属用户id
@@ -245,7 +245,7 @@ export interface MintNFTWithMetadataInput {
     metadata: NFTMetadata;
 
     // count
-    amount: Int32;
+    amount: integer;
 
     // 是否异步
     // 如果为true, 则不会立即返回mint结果, 而是通过事件通知
@@ -271,7 +271,7 @@ export interface MintNFTWithItemIdInput {
     qualityVal: string;
 
     // count
-    amount: Int32;
+    amount: integer;
 
     // 是否异步
     // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
@@ -297,7 +297,7 @@ export interface BatchMintNFTWithItemId {
      * index和itemIds一一对应
      * 所有数量
      */
-    amounts: Int32[];
+    amounts: integer[];
 
     /**
      * 所有的品质
@@ -347,7 +347,7 @@ export interface BurnNFTInput {
     /**
      * 丢弃的数量
      */
-    amount: Int32
+    amount: integer
 }
 
 export interface BurnNFTOutput {
