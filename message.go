@@ -149,7 +149,7 @@ func (j *Auth) UnmarshalJSON(b []byte) error {
 type BatchMintNFTWithItemId struct {
 	// index和itemIds一一对应
 	// 所有数量
-	Amounts []float64 `json:"amounts"`
+	Amounts []int `json:"amounts"`
 
 	// Async corresponds to the JSON schema field "async".
 	Async bool `json:"async"`
@@ -1791,17 +1791,17 @@ type MultiLandAttributionUpdate struct {
 	// 消息版本号
 	Etag int `json:"etag"`
 
-	// OccupiedLandIds corresponds to the JSON schema field "occupiedLandIds".
-	OccupiedLandIds []float64 `json:"occupiedLandIds"`
+	// landId = 地格坐标R*10000 + 地格坐标C
+	OccupiedLandIds []int `json:"occupiedLandIds"`
 
-	// TicketLandIds corresponds to the JSON schema field "ticketLandIds".
-	TicketLandIds []float64 `json:"ticketLandIds"`
+	// landId = 地格坐标R*10000 + 地格坐标C
+	TicketLandIds []int `json:"ticketLandIds"`
 
 	// 归属用户id
 	UserId string `json:"userId"`
 
 	// landId = 地格坐标R*10000 + 地格坐标C
-	VipLandIds []float64 `json:"vipLandIds"`
+	VipLandIds []int `json:"vipLandIds"`
 }
 
 type MultiUpdateUserNFT struct {
@@ -2120,14 +2120,14 @@ type UserGameDataOutput struct {
 
 // 玩家地格信息数据结构
 type UserLandInfo struct {
-	// 攻占的地格
-	OccupiedLands []float64 `json:"occupiedLands"`
+	// landId = 地格坐标R*10000 + 地格坐标C
+	OccupiedLands []int `json:"occupiedLands"`
 
-	// 门票地格
-	TicketLands []float64 `json:"ticketLands"`
+	// landId = 地格坐标R*10000 + 地格坐标C
+	TicketLands []int `json:"ticketLands"`
 
-	// 购买的地格
-	VipLands []float64 `json:"vipLands"`
+	// landId = 地格坐标R*10000 + 地格坐标C
+	VipLands []int `json:"vipLands"`
 }
 
 type UserType string
