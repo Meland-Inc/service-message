@@ -159,7 +159,11 @@ type BatchMintNFTWithItemIdInput struct {
 
 	// 所有的品质
 	// index和itemIds一一对应
-	QualityVals []string `json:"qualityVals"`
+	QualityVals []string `json:"qualityVals,omitempty"`
+
+	// 所有的品质
+	// index和itemIds一一对应
+	Qualitys []string `json:"qualitys,omitempty"`
 
 	// UserId corresponds to the JSON schema field "userId".
 	UserId string `json:"userId"`
@@ -179,9 +183,6 @@ func (j *BatchMintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["itemIds"]; !ok || v == nil {
 		return fmt.Errorf("field itemIds: required")
-	}
-	if v, ok := raw["qualityVals"]; !ok || v == nil {
-		return fmt.Errorf("field qualityVals: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
@@ -1512,9 +1513,6 @@ func (j *MintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["itemId"]; !ok || v == nil {
 		return fmt.Errorf("field itemId: required")
 	}
-	if v, ok := raw["qualityVal"]; !ok || v == nil {
-		return fmt.Errorf("field qualityVal: required")
-	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
@@ -1765,8 +1763,11 @@ type MintNFTWithItemIdInput struct {
 	// ItemId corresponds to the JSON schema field "itemId".
 	ItemId string `json:"itemId"`
 
+	// Quality corresponds to the JSON schema field "quality".
+	Quality *string `json:"quality,omitempty"`
+
 	// QualityVal corresponds to the JSON schema field "qualityVal".
-	QualityVal string `json:"qualityVal"`
+	QualityVal *string `json:"qualityVal,omitempty"`
 
 	// UserId corresponds to the JSON schema field "userId".
 	UserId string `json:"userId"`
