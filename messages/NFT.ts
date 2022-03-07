@@ -1,8 +1,8 @@
 /**
  * @TJS-type integer
  */
- type Int32 = number;
- type integer = Int32;
+type Int32 = number;
+type integer = Int32;
 
 export interface CanBuildNFTInput {
     /**
@@ -285,7 +285,7 @@ export interface MintNFTWithItemIdOutput {
     txId: string;
 }
 
-export interface BatchMintNFTWithItemId {
+export interface BatchMintNFTWithItemIdInput {
     // mint to user id
     userId: string
 
@@ -329,9 +329,29 @@ export interface UseConsumableInput {
      * 消耗品的id
      */
     nftId: string;
+
+    /**
+     * 消耗品的数量
+     */
+    amount: integer;
 }
 
 export interface UseConsumableOutput {
+    /**
+ * 使用消耗品的用户
+ */
+    userId: string
+
+    /**
+     * 消耗品的id
+     */
+    nftId: string;
+
+    /**
+     * 消耗品的数量
+     */
+    amount: integer;
+
     // 是否使用成功
     success: boolean;
 }
