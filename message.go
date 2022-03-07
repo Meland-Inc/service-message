@@ -146,7 +146,7 @@ func (j *Auth) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type BatchMintNFTWithItemId struct {
+type BatchMintNFTWithItemIdInput struct {
 	// index和itemIds一一对应
 	// 所有数量
 	Amounts []int `json:"amounts"`
@@ -166,7 +166,7 @@ type BatchMintNFTWithItemId struct {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *BatchMintNFTWithItemId) UnmarshalJSON(b []byte) error {
+func (j *BatchMintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -186,12 +186,12 @@ func (j *BatchMintNFTWithItemId) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain BatchMintNFTWithItemId
+	type Plain BatchMintNFTWithItemIdInput
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = BatchMintNFTWithItemId(plain)
+	*j = BatchMintNFTWithItemIdInput(plain)
 	return nil
 }
 
@@ -728,8 +728,17 @@ func (j *UseConsumableOutput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
+	if v, ok := raw["amount"]; !ok || v == nil {
+		return fmt.Errorf("field amount: required")
+	}
+	if v, ok := raw["nftId"]; !ok || v == nil {
+		return fmt.Errorf("field nftId: required")
+	}
 	if v, ok := raw["success"]; !ok || v == nil {
 		return fmt.Errorf("field success: required")
+	}
+	if v, ok := raw["userId"]; !ok || v == nil {
+		return fmt.Errorf("field userId: required")
 	}
 	type Plain UseConsumableOutput
 	var plain Plain
@@ -833,6 +842,9 @@ func (j *UseConsumableInput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
+	}
+	if v, ok := raw["amount"]; !ok || v == nil {
+		return fmt.Errorf("field amount: required")
 	}
 	if v, ok := raw["nftId"]; !ok || v == nil {
 		return fmt.Errorf("field nftId: required")
@@ -2058,6 +2070,9 @@ type UpdateUserNFT struct {
 }
 
 type UseConsumableInput struct {
+	// 消耗品的数量
+	Amount int `json:"amount"`
+
 	// 消耗品的id
 	NftId string `json:"nftId"`
 
@@ -2066,8 +2081,17 @@ type UseConsumableInput struct {
 }
 
 type UseConsumableOutput struct {
+	// 消耗品的数量
+	Amount int `json:"amount"`
+
+	// 消耗品的id
+	NftId string `json:"nftId"`
+
 	// Success corresponds to the JSON schema field "success".
 	Success bool `json:"success"`
+
+	// 使用消耗品的用户
+	UserId string `json:"userId"`
 }
 
 type User struct {
