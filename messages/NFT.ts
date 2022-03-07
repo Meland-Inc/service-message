@@ -338,8 +338,8 @@ export interface UseConsumableInput {
 
 export interface UseConsumableOutput {
     /**
- * 使用消耗品的用户
- */
+    * 使用消耗品的用户
+    */
     userId: string
 
     /**
