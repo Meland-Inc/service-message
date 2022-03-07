@@ -269,7 +269,10 @@ export interface MintNFTWithItemIdInput {
 
     // qualityVal
     // int类型的品质
-    qualityVal: string;
+    qualityVal?: string;
+
+    // string类型的品质
+    quality?: string;
 
     // count
     amount: integer;
@@ -306,7 +309,13 @@ export interface BatchMintNFTWithItemIdInput {
      * 所有的品质
      * index和itemIds一一对应
      */
-    qualityVals: string[];
+    qualityVals?: string[];
+
+    /**
+     * 所有的品质
+     * index和itemIds一一对应
+     */
+    qualitys?: string[];
 
     // 是否异步
     // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
