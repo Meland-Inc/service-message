@@ -924,9 +924,6 @@ func (j *NFT) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["itemId"]; !ok || v == nil {
 		return fmt.Errorf("field itemId: required")
 	}
-	if v, ok := raw["metadata"]; !ok || v == nil {
-		return fmt.Errorf("field metadata: required")
-	}
 	if v, ok := raw["network"]; !ok || v == nil {
 		return fmt.Errorf("field network: required")
 	}
@@ -1905,7 +1902,7 @@ type NFT struct {
 	// 直接将tokenURL返回给前端解析即可.
 	// example:
 	// https://nftmetadata-service-release.melandworld.com/placeable/80000031/1
-	Metadata NFTMetadata_1 `json:"metadata"`
+	Metadata *NFTMetadata_1 `json:"metadata,omitempty"`
 
 	// 描述当前nft存储于那条链上
 	Network string `json:"network"`
