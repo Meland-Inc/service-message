@@ -153,7 +153,7 @@ export interface NFT {
      * 目前的实现是, 如果是第三方NFT, 则metadata为空, 直接将tokenURL返回给前端解析即可.
      * example: https://nftmetadata-service-release.melandworld.com/placeable/80000031/1
      */
-    metadata: NFTMetadata;
+    metadata?: NFTMetadata;
 
     /**
      * NFT metadata url
