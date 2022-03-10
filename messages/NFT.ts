@@ -291,6 +291,34 @@ export interface MintNFTWithItemIdOutput {
     txId: string;
 }
 
+export interface MintNFTWithItemIdAndUserAddressInput {
+    // mint to user id
+    userAddress: string;
+
+    // game user itemId, aka cid
+    itemId: string;
+
+    // qualityVal
+    // int类型的品质
+    qualityVal?: string;
+
+    // string类型的品质
+    quality?: NFTTrait_Quality;
+
+    // count
+    amount: integer;
+
+    // 是否异步
+    // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
+    async: boolean;
+}
+
+export interface MintNFTWithItemIdAndUserAddressOutput {
+    // 事务id
+    // 通过这个id可以查询事务状态
+    txId: string;
+}
+
 export interface BatchMintNFTWithItemIdInput {
     // mint to user id
     userId: string

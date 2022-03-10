@@ -33,6 +33,11 @@ export enum Web3ServiceAction {
     // 同一个itemId的NFT属性一样.
     MintNFTWithItemId = 'MintNFTWithItemId',
 
+    // 跟上面的功能一样
+    // 只是用户标识变成user address 而不是 user id
+    // 用于只知道用户地址的情况
+    MintNFTWithItemIdAndUserAddress = 'MintNFTWithItemIdAndUserAddress',
+
     // 批量mint nft
     // 以节省网络开销
     BatchMintNFTWithItemId = 'BatchMintNFTWithItemId',

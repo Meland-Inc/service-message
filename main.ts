@@ -26,3 +26,29 @@ const schema = TJS.generateSchema(program, "*", settings);
 
 const fh = openSync(output, "w+");
 writeFileSync(fh, JSON.stringify(schema));
+
+type B = {
+    a: string
+}
+
+const c: B = {
+    a: "1"
+} 
+
+type E <T> = {
+    a: T
+}
+
+function s<T extends Object>(a: T, ...p: E<typeof c>[] ) {
+
+}
+
+
+
+
+
+
+
+
+
+s(1,)
