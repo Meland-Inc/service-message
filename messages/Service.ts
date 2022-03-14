@@ -13,6 +13,7 @@ export enum MelandServiceAction {
     GetUserNFTs = 'GetUserNFTs',
     GetInitLandAttributions = 'GetInitLandAttributions',
     GetUserWeb3Profile = 'GetUserWeb3Profile',
+    GetUserIdByAddress = 'GetUserIdByAddress',
 
     // 燃烧用户的ditamin
     BurnDitamin = 'BurnDitamin',
