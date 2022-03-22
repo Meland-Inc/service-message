@@ -64,6 +64,9 @@ export enum NFTTraitTypes {
 
     // 学习图鉴
     LearnRecipe = 'Learn Recipe',
+
+    // 获得Buffer
+    GetBuff = 'Get Buff',
 }
 
 // Head
