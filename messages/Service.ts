@@ -2,6 +2,7 @@ export enum AppId {
     "meland-service" = 'meland-service',
     "bellplanet-game" = 'bellplanet-game',
     "web3-service" = 'web3-service',
+    "bellplanet-account" = 'bellplanet-account',
 }
 
 /// action 分为输入和输出
@@ -20,7 +21,11 @@ export enum MelandServiceAction {
 }
 
 export enum GameServiceAction {
-    LandUsingSkill = 'LandUsingSkill'
+    LandUsingSkill = 'LandUsingSkill',
+}
+
+export enum GameAccountServiceAction {
+    GetPlayerInfoByUserId = 'GetPlayerInfoByUserId',
 }
 
 export enum Web3ServiceAction {
@@ -80,4 +85,17 @@ export enum SubscriptionEvent {
 
     // 批量用户NFT变更
     MultiUpdateUserNFT = 'MultiUpdateUserNFT',
+
+    // 用户放弃领地
+    LandAbandon = 'LandAbandon',
+
+    // 使用消耗品
+    UseConsumabled = 'UseConsumabled',
+
+    // 角色死亡
+    PlayerDeath = 'PlayerDeath',
+    // 角色复活
+    PlayerReborn = 'PlayerReborn',
+    // 角色击杀
+    PlayerKilled = 'PlayerKilled',
 }

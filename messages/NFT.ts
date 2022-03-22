@@ -280,6 +280,12 @@ export interface MintNFTWithItemIdInput {
     // count
     amount: integer;
 
+    /**
+     * 玩家所在的坐标landId,
+     * 当mint场景是捡取掉落物时携带
+     */
+    landId?: integer;
+
     // 是否异步
     // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
     async: boolean;
@@ -348,6 +354,12 @@ export interface BatchMintNFTWithItemIdInput {
      */
     qualitys?: NFTTrait_Quality[];
 
+    /**
+     * 玩家所在的坐标landId,
+     * 当mint场景是捡取掉落物时携带
+     */
+    landId?: integer;
+
     // 是否异步
     // 如果为true, 则不会立即mint, 而是将mint请求放入队列, 等待后台处理
     async: boolean;
@@ -374,6 +386,11 @@ export interface UseConsumableInput {
      * 消耗品的数量
      */
     amount: integer;
+
+    /**
+     * 使用消耗品的坐标
+     */
+    landId?: integer;
 }
 
 export interface UseConsumableOutput {
