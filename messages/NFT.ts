@@ -283,7 +283,6 @@ export interface MintNFTWithItemIdInput {
     /**
      * 玩家所在的坐标landId,
      * 当mint场景是捡取掉落物时携带
-     * @TJS-type integer
      */
     landId: integer;
 
@@ -389,7 +388,6 @@ export interface UseConsumableInput {
     amount: integer;
 
     /**
-     * @TJS-type integer
      * 使用消耗品的坐标
      */
     landId: integer;
