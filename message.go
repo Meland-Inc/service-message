@@ -229,7 +229,7 @@ type BatchMintNFTWithItemIdInput struct {
 
 	// 玩家所在的坐标landId,
 	// 当mint场景是捡取掉落物时携带
-	LandId *float64 `json:"landId,omitempty"`
+	LandId int `json:"landId"`
 
 	// 所有的品质
 	// index和itemIds一一对应
@@ -257,6 +257,9 @@ func (j *BatchMintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["itemIds"]; !ok || v == nil {
 		return fmt.Errorf("field itemIds: required")
+	}
+	if v, ok := raw["landId"]; !ok || v == nil {
+		return fmt.Errorf("field landId: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
@@ -856,6 +859,9 @@ func (j *UseConsumableInput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["amount"]; !ok || v == nil {
 		return fmt.Errorf("field amount: required")
+	}
+	if v, ok := raw["landId"]; !ok || v == nil {
+		return fmt.Errorf("field landId: required")
 	}
 	if v, ok := raw["nftId"]; !ok || v == nil {
 		return fmt.Errorf("field nftId: required")
@@ -1888,7 +1894,7 @@ type MintNFTWithItemIdInput struct {
 
 	// 玩家所在的坐标landId,
 	// 当mint场景是捡取掉落物时携带
-	LandId *float64 `json:"landId,omitempty"`
+	LandId int `json:"landId"`
 
 	// Quality corresponds to the JSON schema field "quality".
 	Quality *MintNFTWithItemIdInputQuality `json:"quality,omitempty"`
@@ -1914,6 +1920,9 @@ func (j *MintNFTWithItemIdInput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["itemId"]; !ok || v == nil {
 		return fmt.Errorf("field itemId: required")
+	}
+	if v, ok := raw["landId"]; !ok || v == nil {
+		return fmt.Errorf("field landId: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
@@ -2534,7 +2543,7 @@ type UseConsumableInput struct {
 	Amount int `json:"amount"`
 
 	// 使用消耗品的坐标
-	LandId *float64 `json:"landId,omitempty"`
+	LandId int `json:"landId"`
 
 	// 消耗品的id
 	NftId string `json:"nftId"`
