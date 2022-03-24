@@ -96,5 +96,5 @@ export interface GetPlayerInfoByUserIdInput {
 export interface GetPlayerInfoByUserIdOutput {
     playerName: string;
 
-    plyaerId: string;
+    playerId: string;
 }
