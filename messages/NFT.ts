@@ -26,11 +26,6 @@ export interface CanBuildNFTInput {
 
 export interface CanBuildNFTOutput {
     /**
-     * 消息版本号
-     */
-    etag: integer;
-
-    /**
      * NFT id
      */
     nftId: string;
@@ -222,8 +217,8 @@ export interface UpdateUserNFT {
     fromLandId: integer;
 
     /**
- * 区块链交易hash
- */
+     * 区块链交易hash
+     */
     txn?: string;
 
     /**
@@ -489,6 +484,11 @@ export interface UseConsumabled {
      * 使用消耗品的坐标
      */
     landId: integer;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }
 
 export interface BurnNFTInput {

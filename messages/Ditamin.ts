@@ -1,3 +1,9 @@
+/**
+ * @TJS-type integer
+ */
+ type Int32 = number;
+ type integer = Int32;
+
 export interface BurnDitaminInput {
     /**
      * 需要燃烧的用户id
@@ -52,6 +58,11 @@ export interface DitaminProduce {
 
     // 消耗的用户
     userId: string;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }
 
 export enum DitaminBurnSource {
@@ -74,4 +85,9 @@ export interface DitaminBurn {
 
     // 消耗的用户
     userId: string;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }

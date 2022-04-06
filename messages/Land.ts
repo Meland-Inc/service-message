@@ -145,7 +145,7 @@ export interface LandAttributionUpdate {
     /**
      * 消息版本号
      */
-    etag: integer,
+    etag: integer;
 
     /**
      * 归属用户id
@@ -168,4 +168,9 @@ export interface LandAbandon {
     landId: integer;
 
     userId: string;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }

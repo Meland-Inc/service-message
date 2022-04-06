@@ -1,3 +1,9 @@
+/**
+ * @TJS-type integer
+ */
+type Int32 = number;
+type integer = Int32;
+
 // 当用户完成一个quiz时触发
 export interface FinishQuestion {
 
@@ -16,4 +22,9 @@ export interface FinishQuestion {
 
     // 答题结果对当前题型难度的影响，降难度、难度不变、提高难度分别为-1,0,1
     diffcultyChange: number;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }

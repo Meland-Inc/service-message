@@ -1,5 +1,11 @@
 import { NFT } from './NFT';
 
+/**
+ * @TJS-type integer
+ */
+type Int32 = number;
+type integer = Int32;
+
 export interface MarketplaceTrade {
     tokenType: string;
 
@@ -10,4 +16,9 @@ export interface MarketplaceTrade {
     txn: string;
 
     chainName: string;
+
+    /**
+     * 消息版本号
+     */
+    etag: integer;
 }
