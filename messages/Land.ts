@@ -150,7 +150,12 @@ export interface LandAttributionUpdate {
     /**
      * 归属用户id
      */
-    userId: string;   
+    userId: string;
+
+    /**
+     * 上一个用户归属id
+     */
+    landOwner: string;
 
     /**
      * landId = 地格坐标R*10000 + 地格坐标C
