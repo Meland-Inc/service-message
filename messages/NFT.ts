@@ -144,6 +144,12 @@ export interface NFT {
     amount: integer;
 
     /**
+     * NFT 变化量
+     * 默认值为0, 当某一个事件发出时, 若为n<0则表示此次事件导致的nft数量减少n, n>0则表示此次事件导致的nft数量增加n
+     */
+    amountOfChange: integer;
+
+    /**
      * NFT metadata info
      * 如果非第三方则必须有metadata
      * 目前的实现是, 如果是第三方NFT, 则metadata为空, 直接将tokenURL返回给前端解析即可.
