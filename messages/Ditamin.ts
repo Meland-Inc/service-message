@@ -32,3 +32,46 @@ export interface BurnDitaminOutput {
      */
     failedReason: string;
 }
+
+export enum DitaminProduceSource {
+    harvest = 'harvest',
+
+    quizChallenage = 'quizChallenage',
+}
+
+export interface DitaminProduce {
+    /**
+     * ditamin数量
+     */
+    ditaminAmount: string;
+
+    /**
+     * 生产源
+     */
+    source: DitaminProduceSource;
+
+    // 消耗的用户
+    userId: string;
+}
+
+export enum DitaminBurnSource {
+    exchange = 'exchange',
+    buyEnergy = 'buyEnergy',
+    buildNFT = 'buildNFT',
+    build3drNFT = 'build3drNFT',
+}
+
+export interface DitaminBurn {
+    /**
+     * ditamin数量
+     */
+    ditaminAmount: string;
+
+    /**
+     * 生产源
+     */
+    source: DitaminBurnSource;
+
+    // 消耗的用户
+    userId: string;
+}

@@ -92,10 +92,30 @@ export enum SubscriptionEvent {
     // 使用消耗品
     UseConsumabled = 'UseConsumabled',
 
+    // MELD期货创建
+    MELDFutureMint = 'MELDFutureMint',
+
+    // 
+    MELDFutureExchangeRateChange = 'MELDFutureExchangeRateChange',
+
+    MELDFutureRelease = 'MELDFutureRelease',
+
+    MELDExchange2Ditamin = 'MELDExchange2Ditamin',
+
+    MarketplaceTrade = 'MarketplaceTrade',
+
+    DitaminProduce = 'DitaminProduce',
+    DitaminBurn = 'DitaminBurn',
+
     // 角色死亡
     PlayerDeath = 'PlayerDeath',
+
     // 角色复活
     PlayerReborn = 'PlayerReborn',
+
     // 角色击杀
     PlayerKilled = 'PlayerKilled',
+
+    // 完成问题
+    FinishQuestion = 'FinishQuestion',
 }

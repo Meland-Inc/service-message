@@ -216,9 +216,42 @@ export interface UpdateUserNFT {
     userId: string;
 
     /**
+     * 来源坐标
+     * 当捡取时携带且不为0
+     */
+    fromLandId: integer;
+
+    /**
+ * 区块链交易hash
+ */
+    txn?: string;
+
+    /**
+     * 接收NFT的用户钱包地址
+     */
+    recipientBlockchainAddress?: string;
+
+    /**
+     * 发送NFT的用户钱包地址
+     */
+    senderBlockchainAddress?: string;
+
+    /**
      * NFT信息
      */
     nft: NFT;
+}
+
+export interface RecipeInfo {
+    /**
+     * 图鉴id
+     */
+    id: string;
+
+    /**
+     * 图鉴名称
+     */
+    name: string;
 }
 
 export interface MultiUpdateUserNFT {
@@ -231,6 +264,32 @@ export interface MultiUpdateUserNFT {
      *  归属用户id
      */
     userId: string;
+
+    /**
+     * 来源坐标
+     * 当捡取时携带且不为0
+     */
+    fromLandId: integer;
+
+    /**
+     * 来源合成图鉴
+     */
+    fromRecipeInfo?: RecipeInfo;
+
+    /**
+     * 区块链交易hash
+     */
+    txn?: string;
+
+    /**
+     * 接收NFT的用户钱包地址
+     */
+    recipientBlockchainAddress?: string;
+
+    /**
+     * 发送NFT的用户钱包地址
+     */
+    senderBlockchainAddress?: string;
 
     /**
      * NFT信息
@@ -411,6 +470,25 @@ export interface UseConsumableOutput {
 
     // 是否使用成功
     success: boolean;
+}
+
+export interface UseConsumabled {
+    /**
+    * 使用消耗品的用户
+    */
+    userId: string;
+
+    nft: NFT;
+
+    /**
+     * 消耗品的数量
+     */
+    amount: integer;
+
+    /**
+     * 使用消耗品的坐标
+     */
+    landId: integer;
 }
 
 export interface BurnNFTInput {

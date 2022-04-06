@@ -19,3 +19,11 @@ export * from "./messages/Recipe";
 export * from './messages/Ditamin';
 
 export * from './messages/Player';
+
+export * from './messages/Exchange';
+
+export * from './messages/Marketplace';
+
+export * from './messages/Question';
+
+export * from './messages/Stake';
