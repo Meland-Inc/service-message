@@ -122,9 +122,6 @@ type CanBuildNFTOutput struct {
 	// CanBuild corresponds to the JSON schema field "canBuild".
 	CanBuild bool `json:"canBuild"`
 
-	// 消息版本号
-	Etag int `json:"etag"`
-
 	// NFT id
 	NftId string `json:"nftId"`
 }
@@ -132,6 +129,9 @@ type CanBuildNFTOutput struct {
 type DitaminBurn struct {
 	// ditamin数量
 	DitaminAmount string `json:"ditaminAmount"`
+
+	// 消息版本号
+	Etag int `json:"etag"`
 
 	// 生产源
 	Source DitaminBurnSource_1 `json:"source"`
@@ -158,6 +158,9 @@ type DitaminProduce struct {
 	// ditamin数量
 	DitaminAmount string `json:"ditaminAmount"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// 生产源
 	Source DitaminProduceSource_1 `json:"source"`
 
@@ -178,6 +181,9 @@ const DitaminProduceSource_1_QuizChallenage DitaminProduceSource_1 = "quizChalle
 type FinishQuestion struct {
 	// DiffcultyChange corresponds to the JSON schema field "diffcultyChange".
 	DiffcultyChange float64 `json:"diffcultyChange"`
+
+	// 消息版本号
+	Etag int `json:"etag"`
 
 	// Level corresponds to the JSON schema field "level".
 	Level string `json:"level"`
@@ -290,6 +296,9 @@ type Int32 int
 type Integer float64
 
 type LandAbandon struct {
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// LandId corresponds to the JSON schema field "landId".
 	LandId int `json:"landId"`
 
@@ -386,12 +395,18 @@ type MELDExchange2Ditamin struct {
 	// DitaminAmount corresponds to the JSON schema field "ditaminAmount".
 	DitaminAmount string `json:"ditaminAmount"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// UserBlockchainAddress corresponds to the JSON schema field
 	// "userBlockchainAddress".
 	UserBlockchainAddress string `json:"userBlockchainAddress"`
 }
 
 type MELDFutureExchangeRateChange struct {
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// ExchangeRate corresponds to the JSON schema field "exchangeRate".
 	ExchangeRate string `json:"exchangeRate"`
 }
@@ -411,6 +426,9 @@ type MELDFutureRelease struct {
 	// AmountOfMELD corresponds to the JSON schema field "amountOfMELD".
 	AmountOfMELD string `json:"amountOfMELD"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// UserBlockchainAddress corresponds to the JSON schema field
 	// "userBlockchainAddress".
 	UserBlockchainAddress string `json:"userBlockchainAddress"`
@@ -419,6 +437,9 @@ type MELDFutureRelease struct {
 type MarketplaceTrade struct {
 	// ChainName corresponds to the JSON schema field "chainName".
 	ChainName string `json:"chainName"`
+
+	// 消息版本号
+	Etag int `json:"etag"`
 
 	// Nft corresponds to the JSON schema field "nft".
 	Nft NFT `json:"nft"`
@@ -779,6 +800,9 @@ func (j *LandAbandon) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["landId"]; !ok || v == nil {
 		return fmt.Errorf("field landId: required")
@@ -1374,6 +1398,9 @@ func (j *MELDExchange2Ditamin) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["ditaminAmount"]; !ok || v == nil {
 		return fmt.Errorf("field ditaminAmount: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["userBlockchainAddress"]; !ok || v == nil {
 		return fmt.Errorf("field userBlockchainAddress: required")
 	}
@@ -1412,6 +1439,9 @@ func (j *MELDFutureExchangeRateChange) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["exchangeRate"]; !ok || v == nil {
 		return fmt.Errorf("field exchangeRate: required")
@@ -1482,6 +1512,9 @@ func (j *UseConsumabled) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["amount"]; !ok || v == nil {
 		return fmt.Errorf("field amount: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["landId"]; !ok || v == nil {
 		return fmt.Errorf("field landId: required")
 	}
@@ -1508,6 +1541,9 @@ func (j *MELDFutureRelease) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["amountOfMELD"]; !ok || v == nil {
 		return fmt.Errorf("field amountOfMELD: required")
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["userBlockchainAddress"]; !ok || v == nil {
 		return fmt.Errorf("field userBlockchainAddress: required")
@@ -1549,6 +1585,9 @@ func (j *MarketplaceTrade) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["chainName"]; !ok || v == nil {
 		return fmt.Errorf("field chainName: required")
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["nft"]; !ok || v == nil {
 		return fmt.Errorf("field nft: required")
@@ -1690,6 +1729,9 @@ func (j *FinishQuestion) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["diffcultyChange"]; !ok || v == nil {
 		return fmt.Errorf("field diffcultyChange: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["level"]; !ok || v == nil {
 		return fmt.Errorf("field level: required")
 	}
@@ -1785,6 +1827,9 @@ func (j *DitaminProduce) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["ditaminAmount"]; !ok || v == nil {
 		return fmt.Errorf("field ditaminAmount: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["source"]; !ok || v == nil {
 		return fmt.Errorf("field source: required")
 	}
@@ -1852,6 +1897,9 @@ func (j *UserStakeAdd) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["amountOfMELD"]; !ok || v == nil {
 		return fmt.Errorf("field amountOfMELD: required")
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["stakeLevel"]; !ok || v == nil {
 		return fmt.Errorf("field stakeLevel: required")
@@ -1935,6 +1983,9 @@ func (j *UserStakeClaim) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["amountOfMELD"]; !ok || v == nil {
 		return fmt.Errorf("field amountOfMELD: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["stakeLevel"]; !ok || v == nil {
 		return fmt.Errorf("field stakeLevel: required")
 	}
@@ -1958,6 +2009,9 @@ func (j *DitaminBurn) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["ditaminAmount"]; !ok || v == nil {
 		return fmt.Errorf("field ditaminAmount: required")
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["source"]; !ok || v == nil {
 		return fmt.Errorf("field source: required")
@@ -2003,6 +2057,9 @@ func (j *UserStakeExpire) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["amountOfMELD"]; !ok || v == nil {
 		return fmt.Errorf("field amountOfMELD: required")
 	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
+	}
 	if v, ok := raw["stakeLevel"]; !ok || v == nil {
 		return fmt.Errorf("field stakeLevel: required")
 	}
@@ -2026,9 +2083,6 @@ func (j *CanBuildNFTOutput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["canBuild"]; !ok || v == nil {
 		return fmt.Errorf("field canBuild: required")
-	}
-	if v, ok := raw["etag"]; !ok || v == nil {
-		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["nftId"]; !ok || v == nil {
 		return fmt.Errorf("field nftId: required")
@@ -2314,6 +2368,9 @@ func (j *UserStakeHarvest) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
+	}
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
 	if v, ok := raw["harvestAmountOfMELD"]; !ok || v == nil {
 		return fmt.Errorf("field harvestAmountOfMELD: required")
@@ -3154,6 +3211,9 @@ type UseConsumabled struct {
 	// 消耗品的数量
 	Amount int `json:"amount"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// 使用消耗品的坐标
 	LandId int `json:"landId"`
 
@@ -3212,6 +3272,9 @@ type UserStakeAdd struct {
 	// AmountOfMELD corresponds to the JSON schema field "amountOfMELD".
 	AmountOfMELD string `json:"amountOfMELD"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// StakeLevel corresponds to the JSON schema field "stakeLevel".
 	StakeLevel string `json:"stakeLevel"`
 
@@ -3223,6 +3286,9 @@ type UserStakeAdd struct {
 type UserStakeClaim struct {
 	// AmountOfMELD corresponds to the JSON schema field "amountOfMELD".
 	AmountOfMELD string `json:"amountOfMELD"`
+
+	// 消息版本号
+	Etag int `json:"etag"`
 
 	// StakeLevel corresponds to the JSON schema field "stakeLevel".
 	StakeLevel string `json:"stakeLevel"`
@@ -3236,6 +3302,9 @@ type UserStakeExpire struct {
 	// AmountOfMELD corresponds to the JSON schema field "amountOfMELD".
 	AmountOfMELD string `json:"amountOfMELD"`
 
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// StakeLevel corresponds to the JSON schema field "stakeLevel".
 	StakeLevel string `json:"stakeLevel"`
 
@@ -3245,6 +3314,9 @@ type UserStakeExpire struct {
 }
 
 type UserStakeHarvest struct {
+	// 消息版本号
+	Etag int `json:"etag"`
+
 	// HarvestAmountOfMELD corresponds to the JSON schema field "harvestAmountOfMELD".
 	HarvestAmountOfMELD string `json:"harvestAmountOfMELD"`
 
