@@ -630,6 +630,12 @@ type NFT struct {
 	// NFT amount
 	Amount int `json:"amount"`
 
+	// NFT 变化量
+	// 默认值为0, 当某一个事件发出时,
+	// 若为n<0则表示此次事件导致的nft数量减少n,
+	// n>0则表示此次事件导致的nft数量增加n
+	AmountOfChange int `json:"amountOfChange"`
+
 	// NFT id
 	Id string `json:"id"`
 
@@ -1124,6 +1130,9 @@ func (j *NFT) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["amount"]; !ok || v == nil {
 		return fmt.Errorf("field amount: required")
+	}
+	if v, ok := raw["amountOfChange"]; !ok || v == nil {
+		return fmt.Errorf("field amountOfChange: required")
 	}
 	if v, ok := raw["id"]; !ok || v == nil {
 		return fmt.Errorf("field id: required")
