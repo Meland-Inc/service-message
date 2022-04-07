@@ -86,9 +86,6 @@ export enum SubscriptionEvent {
     // 批量用户NFT变更
     MultiUpdateUserNFT = 'MultiUpdateUserNFT',
 
-    // 用户放弃领地
-    LandAbandon = 'LandAbandon',
-
     // 使用消耗品
     UseConsumabled = 'UseConsumabled',
 
