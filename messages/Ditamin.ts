@@ -72,6 +72,7 @@ export enum DitaminBurnSource {
     buyEnergy = 'buyEnergy',
     buildNFT = 'buildNFT',
     build3drNFT = 'build3drNFT',
+    craft = 'craft',
 }
 
 export interface DitaminBurn {
