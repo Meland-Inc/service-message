@@ -42,7 +42,9 @@ export interface BurnDitaminOutput {
 export enum DitaminProduceSource {
     harvest = 'harvest',
 
-    quizChallenage = 'quizChallenage',
+    deposit = 'deposit',
+
+    attackFinlish = 'attackFinlish',
 }
 
 export interface DitaminProduce {
