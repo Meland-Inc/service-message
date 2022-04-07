@@ -314,7 +314,7 @@ type LandAttributionUpdate struct {
 	LandId int `json:"landId"`
 
 	// 上一个用户归属id
-	LandOwner string `json:"landOwner"`
+	LandOwnerId string `json:"landOwnerId"`
 
 	// 地格新的归属状态
 	// unoccupied || occupied || ticket || vip
@@ -789,8 +789,8 @@ func (j *LandAttributionUpdate) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["landId"]; !ok || v == nil {
 		return fmt.Errorf("field landId: required")
 	}
-	if v, ok := raw["landOwner"]; !ok || v == nil {
-		return fmt.Errorf("field landOwner: required")
+	if v, ok := raw["landOwnerId"]; !ok || v == nil {
+		return fmt.Errorf("field landOwnerId: required")
 	}
 	if v, ok := raw["landStatus"]; !ok || v == nil {
 		return fmt.Errorf("field landStatus: required")
