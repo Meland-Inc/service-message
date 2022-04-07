@@ -18,7 +18,7 @@ export interface BurnDitaminInput {
     /**
      * 燃烧的原因
      */
-    remark: string;
+    source: DitaminBurnSource;
 
     /**
      * 燃烧的hash id
