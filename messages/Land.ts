@@ -168,14 +168,3 @@ export interface LandAttributionUpdate {
      */
     landStatus: LandStatus;
 }
-
-export interface LandAbandon {
-    landId: integer;
-
-    userId: string;
-
-    /**
-     * 消息版本号
-     */
-    etag: integer;
-}
