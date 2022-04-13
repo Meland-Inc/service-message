@@ -5,6 +5,8 @@ type Int32 = number;
 type integer = Int32;
 
 export interface MELDFutureMint {
+    mfId: string;
+
     /**
      * 期货价值余额
      */
@@ -36,6 +38,8 @@ export interface MELDFutureRelease {
     userBlockchainAddress: string;
     amountOfMELD: string;
 
+    mfId: string;
+
     /**
      * 消息版本号
      */
@@ -44,6 +48,8 @@ export interface MELDFutureRelease {
 
 // 
 export interface MELDExchange2Ditamin {
+    depositId: string;
+
     amountOfMELD: string;
 
 

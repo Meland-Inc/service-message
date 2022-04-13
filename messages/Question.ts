@@ -28,3 +28,4 @@ export interface FinishQuestion {
      */
     etag: integer;
 }
+
