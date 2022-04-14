@@ -18,6 +18,9 @@ export enum MelandServiceAction {
 
     // 燃烧用户的ditamin
     BurnDitamin = 'BurnDitamin',
+
+    // 获取指定类型的题目
+    GetQuestionsByTypesRandom = 'GetQuestionsByTypesRandom',
 }
 
 export enum GameServiceAction {
