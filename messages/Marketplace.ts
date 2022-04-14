@@ -17,8 +17,13 @@ export interface MarketplaceTrade {
 
     chainName: string;
 
+    sellerBlockchainAddress: string;
+    buyerBlockchainAddress: string;
+
     /**
      * 消息版本号
      */
     etag: integer;
+
+
 }

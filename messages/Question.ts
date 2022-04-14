@@ -6,6 +6,8 @@ type integer = Int32;
 
 // 当用户完成一个quiz时触发
 export interface FinishQuestion {
+    // 答题的用户
+    userId: string;
 
     // 题目类型
     type: string,

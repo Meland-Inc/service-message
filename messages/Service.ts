@@ -116,3 +116,8 @@ export enum SubscriptionEvent {
     // 完成问题
     FinishQuestion = 'FinishQuestion',
 }
+
+export enum PVPSubscriptionEvent {
+    // PVP 匹配开始
+    PVPMatchBegin = 'PVPMatchBegin',
+}

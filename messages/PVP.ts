@@ -1,4 +1,4 @@
-export enum PVPPKRoomStatus {
+export enum PVPPKSessionStatus {
     // 玩家资源加载中
     preloading = 'preloading',
 
@@ -38,7 +38,7 @@ export interface PVPUser {
 // PVP房间
 // 一切PVP的基础
 // 对外会提供多个API来创建不同的房间
-export interface PVPPKRoom {
+export interface PVPPKSession {
     // 房间id
     id: string;
 
@@ -49,7 +49,7 @@ export interface PVPPKRoom {
     questions2str: string;
 
     // 房间状态
-    status: PVPPKRoomStatus;
+    status: PVPPKSessionStatus;
 
     player1: PVPUser;
     player2: PVPUser;
