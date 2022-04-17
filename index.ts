@@ -27,3 +27,6 @@ export * from './messages/Marketplace';
 export * from './messages/Question';
 
 export * from './messages/Stake';
+
+export * from './messages/PVP';
+export * from './messages/PVPMatch';

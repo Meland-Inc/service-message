@@ -17,45 +17,49 @@ export enum PVPUserType {
     user = 'user',
 }
 
-export interface PVPUser {
-    /**
-     * If guest, then user id is the fingerprint id of the user's device.
-     * Used purely to distinguish between different users
-     */
-    type: PVPUserType;
-
-    /**
-     * user id
-     */
-    id: string;
-
-    /**
-     * 血量
-     */
-    blood: number;
+export interface PVPPlayer {
+    Id: string;
+    Type: PVPUserType;
 }
 
-// PVP房间
-// 一切PVP的基础
-// 对外会提供多个API来创建不同的房间
-export interface PVPPKSession {
-    // 房间id
-    id: string;
+export interface PkSessionUITickInput {
+    pkSessionId: string;
+    player: PVPPlayer;
+    data: string;
+}
 
-    // questions string for player1
-    questions1str: string;
+export interface PkSessionUITickOutput {
 
-    // questions string for player2
-    questions2str: string;
+}
 
-    // 房间状态
-    status: PVPPKSessionStatus;
+export interface PkSessionDoQuestionInput {
+    pkSessionId: string;
 
-    player1: PVPUser;
-    player2: PVPUser;
+    player: PVPPlayer;
+  
+    questionId: string;
 
-    /**
-     * 超时倒计时.
-     */
-    timeoutSeconds: number;
+    answerSequentialMatch?: string[];
+}
+
+export interface PkSessionDoQuestionOutput {
+
+}
+
+export interface PkSessionLoadSuccessInput {
+    pkSessionId: string;
+
+    player: PVPPlayer;
+}
+
+export interface PkSessionLoadSuccessOutput {
+
+}
+
+export interface GetCurrentPkSessionIdInput {
+    player: PVPPlayer;
+}
+
+export interface GetCurrentPkSessionIdOutput {
+    pkSessionId: string;
 }

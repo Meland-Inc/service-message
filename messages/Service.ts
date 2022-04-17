@@ -3,6 +3,7 @@ export enum AppId {
     "bellplanet-game" = 'bellplanet-game',
     "web3-service" = 'web3-service',
     "bellplanet-account" = 'bellplanet-account',
+    "pvp-service" = 'pvp-service',
 }
 
 /// action 分为输入和输出
@@ -21,6 +22,15 @@ export enum MelandServiceAction {
 
     // 获取指定类型的题目
     GetQuestionsByTypesRandom = 'GetQuestionsByTypesRandom',
+}
+
+export enum PVPServiceAction {
+    CreatePVPRoom = 'CreatePVPRoom',
+    PVPRoomReady = 'PVPRoomReady',
+    PkSessionUITick = 'PkSessionUITick',
+    PkSessionDoQuestion = 'PkSessionDoQuestion',
+    PkSessionLoadSuccess = 'PkSessionLoadSuccess',
+    GetCurrentPkSessionId = 'GetCurrentPkSessionId',
 }
 
 export enum GameServiceAction {
