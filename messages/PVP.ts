@@ -18,8 +18,8 @@ export enum PVPUserType {
 }
 
 export interface PVPPlayer {
-    Id: string;
-    Type: PVPUserType;
+    id: string;
+    type: PVPUserType;
 }
 
 export interface PkSessionUITickInput {
