@@ -1458,11 +1458,11 @@ func (j *PVPPlayer) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["Id"]; !ok || v == nil {
-		return fmt.Errorf("field Id: required")
+	if v, ok := raw["id"]; !ok || v == nil {
+		return fmt.Errorf("field id: required")
 	}
-	if v, ok := raw["Type"]; !ok || v == nil {
-		return fmt.Errorf("field Type: required")
+	if v, ok := raw["type"]; !ok || v == nil {
+		return fmt.Errorf("field type: required")
 	}
 	type Plain PVPPlayer
 	var plain Plain
@@ -3495,11 +3495,11 @@ const PVPPKSessionStatusPreloading PVPPKSessionStatus = "preloading"
 const PVPPKSessionStatusStarted PVPPKSessionStatus = "started"
 
 type PVPPlayer struct {
-	// Id corresponds to the JSON schema field "Id".
-	Id string `json:"Id"`
+	// Id corresponds to the JSON schema field "id".
+	Id string `json:"id"`
 
-	// Type corresponds to the JSON schema field "Type".
-	Type PVPUserType `json:"Type"`
+	// Type corresponds to the JSON schema field "type".
+	Type PVPUserType `json:"type"`
 }
 
 type PVPRoomReadyInput struct {
