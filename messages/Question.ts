@@ -33,16 +33,13 @@ export interface FinishQuestion {
 
 export interface Question {
     // 题目id
-    questionId: string;
+    id: string;
 
-    // 题目难度
-    level: string;
-
-    // 题目类型
-    type: QuestionType;
-
-    // 题目内容
-    data: string;
+    // 题目结构的json字符串
+    // 由于题目结构协议比较复杂
+    // 且大部分微服务场景只需要传递即可
+    // 所以使用json直接传递
+    structJSON: string;
 }
 
 export enum QuestionType {
@@ -93,4 +90,17 @@ export interface GetQuestionsByTypesRandomInput {
 
 export interface GetQuestionsByTypesRandomOutput {
     questions: Question[];
+}
+
+export interface CheckQuestionAnswerInput {
+    // 题目id
+    questionId: string;
+
+    // 答案json
+    answerJSON: string;
+}
+
+export interface CheckQuestionAnswerOutput {
+    // 是否正确
+    isCorrect: boolean;
 }

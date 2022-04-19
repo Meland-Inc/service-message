@@ -22,6 +22,9 @@ export enum MelandServiceAction {
 
     // 获取指定类型的题目
     GetQuestionsByTypesRandom = 'GetQuestionsByTypesRandom',
+
+    // 检查题目是否回答正确
+    CheckQuestionAnswer = 'CheckQuestionAnswer',
 }
 
 export enum PVPServiceAction {

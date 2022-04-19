@@ -43,7 +43,8 @@ export interface PkSessionDoQuestionInput {
 }
 
 export interface PkSessionDoQuestionOutput {
-
+    // 是否正确
+    isCorrect: boolean;
 }
 
 export interface PkSessionLoadSuccessInput {
