@@ -85,7 +85,7 @@ export interface GetQuestionsByTypesRandomInput {
     types: string[];
 
     // 获取的数量
-    limit: number;
+    limit: integer;
 }
 
 export interface GetQuestionsByTypesRandomOutput {
@@ -94,10 +94,7 @@ export interface GetQuestionsByTypesRandomOutput {
 
 export interface GetQuestionResourcesByTypesInput {
     // 题目类型
-    types: QuestionType[];
-
-    // 获取的数量
-    limit: number;
+    types: string[];
 }
 
 export interface GetQuestionResourcesByTypesOutput {
