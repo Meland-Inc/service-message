@@ -25,6 +25,8 @@ export enum MelandServiceAction {
 
     // 检查题目是否回答正确
     CheckQuestionAnswer = 'CheckQuestionAnswer',
+
+    GetQuestionResourcesByTypes = 'GetQuestionResourcesByTypes',
 }
 
 export enum PVPServiceAction {

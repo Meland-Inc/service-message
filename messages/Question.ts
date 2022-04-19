@@ -82,7 +82,7 @@ export enum QuestionType {
 
 export interface GetQuestionsByTypesRandomInput {
     // 题目类型
-    types: QuestionType[];
+    types: string[];
 
     // 获取的数量
     limit: number;
@@ -90,6 +90,18 @@ export interface GetQuestionsByTypesRandomInput {
 
 export interface GetQuestionsByTypesRandomOutput {
     questions: Question[];
+}
+
+export interface GetQuestionResourcesByTypesInput {
+    // 题目类型
+    types: QuestionType[];
+
+    // 获取的数量
+    limit: number;
+}
+
+export interface GetQuestionResourcesByTypesOutput {
+    resources: string[];
 }
 
 export interface CheckQuestionAnswerInput {
