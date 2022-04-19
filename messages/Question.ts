@@ -97,8 +97,19 @@ export interface GetQuestionResourcesByTypesInput {
     types: string[];
 }
 
-export interface GetQuestionResourcesByTypesOutput {
+// type QuestionPrefetch struct {
+// 	QuestionId   string       `json:"questionId"`
+// 	QuestionType QuestionType `json:"questionType"`
+// 	Resources    []string     `json:"resources"`
+// }
+export interface Prefetch {
+    questionId: string;
+    questionType: QuestionType;
     resources: string[];
+}
+
+export interface GetQuestionResourcesByTypesOutput {
+    prefetchs: Prefetch[];
 }
 
 export interface CheckQuestionAnswerInput {
