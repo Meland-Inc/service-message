@@ -112,7 +112,7 @@ export enum SubscriptionEvent {
     UseEquipment  = 'UseEquipment',
 
     // 卸下装备
-    UnUseEquipment = 'UnUseEquipment',
+    UnloadEquipment = 'UnloadEquipment',
 
     // MELD期货创建
     MELDFutureMint = 'MELDFutureMint',

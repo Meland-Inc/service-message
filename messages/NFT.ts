@@ -562,7 +562,7 @@ export interface UsingNFT {
 }
 
 
-export interface GetPlayerUsingNftsByUserIdIdInput{
+export interface GetPlayerUsingNftsByUserIdInput{
     userId: string;
 }
 
@@ -593,7 +593,7 @@ export interface UseEquipment{
     avatarPos:integer;
 }
 
-export interface UnUseEquipment{
+export interface UnloadEquipment{
     nftId:string;
 
     /**
