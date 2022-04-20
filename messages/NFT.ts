@@ -536,3 +536,73 @@ export interface GetUserNFTsByUserIdAndAddressInput {
 export interface GetUserNFTsByUserIdAndAddressOutput {
     nfts: NFT[];
 }
+
+
+
+
+export interface UsingNFT {
+    nftId:string;
+
+    /**
+     * 用户id
+    */
+    userId: string;
+
+    /**
+     * 游戏角色id
+    */
+    playerId: string;
+
+    cid:integer;
+
+    /**
+      * 装备位置 对时装和装备有效
+    */
+    avatarPos:integer;
+}
+
+
+export interface GetPlayerUsingNftsByUserIdIdInput{
+    userId: string;
+}
+
+export interface GetPlayerUsingNftsByUserIdOutput{
+    userId: string;
+
+    usingNfts: UsingNFT[];
+}
+
+export interface UseEquipment{
+    nftId:string;
+
+    /**
+     * 用户id
+    */
+    userId: string;
+
+    /**
+     * 游戏角色id
+    */
+    playerId: string;
+
+    cid:integer;
+
+    /**
+      * 装备位置 对时装和装备有效
+    */
+    avatarPos:integer;
+}
+
+export interface UnUseEquipment{
+    nftId:string;
+
+    /**
+     * 用户id
+    */
+    userId: string;
+
+    /**
+     * 游戏角色id
+    */
+    playerId: string;
+}
