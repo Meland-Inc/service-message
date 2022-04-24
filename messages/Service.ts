@@ -44,6 +44,7 @@ export enum GameServiceAction {
 
 export enum GameAccountServiceAction {
     GetPlayerInfoByUserId = 'GetPlayerInfoByUserId',
+    GetPlayerUsingNftsByUserId = 'GetPlayerUsingNftsByUserId',    
 }
 
 export enum Web3ServiceAction {
@@ -106,6 +107,12 @@ export enum SubscriptionEvent {
 
     // 使用消耗品
     UseConsumabled = 'UseConsumabled',
+
+    // 穿装备
+    UseEquipment  = 'UseEquipment',
+
+    // 卸下装备
+    UnloadEquipment = 'UnloadEquipment',
 
     // MELD期货创建
     MELDFutureMint = 'MELDFutureMint',
