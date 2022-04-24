@@ -94,7 +94,13 @@ export interface GetPlayerInfoByUserIdInput {
 }
 
 export interface GetPlayerInfoByUserIdOutput {
+    userId: string;
+    
     playerName: string;
 
     playerId: string;
+
+    icon: string;
+
+    feature: string;
 }
