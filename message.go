@@ -1389,11 +1389,20 @@ func (j *GetPlayerInfoByUserIdInput) UnmarshalJSON(b []byte) error {
 }
 
 type GetPlayerInfoByUserIdOutput struct {
+	// Feature corresponds to the JSON schema field "feature".
+	Feature string `json:"feature"`
+
+	// Icon corresponds to the JSON schema field "icon".
+	Icon string `json:"icon"`
+
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
 
 	// PlayerName corresponds to the JSON schema field "playerName".
 	PlayerName string `json:"playerName"`
+
+	// UserId corresponds to the JSON schema field "userId".
+	UserId string `json:"userId"`
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
@@ -1402,11 +1411,20 @@ func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
+	if v, ok := raw["feature"]; !ok || v == nil {
+		return fmt.Errorf("field feature: required")
+	}
+	if v, ok := raw["icon"]; !ok || v == nil {
+		return fmt.Errorf("field icon: required")
+	}
 	if v, ok := raw["playerId"]; !ok || v == nil {
 		return fmt.Errorf("field playerId: required")
 	}
 	if v, ok := raw["playerName"]; !ok || v == nil {
 		return fmt.Errorf("field playerName: required")
+	}
+	if v, ok := raw["userId"]; !ok || v == nil {
+		return fmt.Errorf("field userId: required")
 	}
 	type Plain GetPlayerInfoByUserIdOutput
 	var plain Plain
