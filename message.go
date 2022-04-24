@@ -1401,6 +1401,9 @@ type GetPlayerInfoByUserIdOutput struct {
 	// PlayerName corresponds to the JSON schema field "playerName".
 	PlayerName string `json:"playerName"`
 
+	// 角色cid (男性 1001 / 女性 1002)
+	RoleCId int `json:"roleCId"`
+
 	// UserId corresponds to the JSON schema field "userId".
 	UserId string `json:"userId"`
 }
@@ -1422,6 +1425,9 @@ func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["playerName"]; !ok || v == nil {
 		return fmt.Errorf("field playerName: required")
+	}
+	if v, ok := raw["roleCId"]; !ok || v == nil {
+		return fmt.Errorf("field roleCId: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
