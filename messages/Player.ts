@@ -103,4 +103,9 @@ export interface GetPlayerInfoByUserIdOutput {
     icon: string;
 
     feature: string;
+
+    /**
+     * 角色cid (男性 1001 / 女性 1002)
+    */
+    roleCId: integer;
 }
