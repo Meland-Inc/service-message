@@ -15,3 +15,19 @@ export interface PVPRoomReadyInput {
 export interface PVPRoomReadyOutput {
 
 }
+
+export interface PVPMatchEnterInput{
+    userId: string;
+}
+
+export interface PVPMatchEnterOutput{
+    succese:boolean;
+}
+
+export interface PVPMatchLeaveInput{
+    userId: string;
+}
+
+export interface PVPMatchLeaveInput{
+    succese : boolean;
+}

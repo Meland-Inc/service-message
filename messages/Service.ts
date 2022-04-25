@@ -36,6 +36,8 @@ export enum PVPServiceAction {
     PkSessionDoQuestion = 'PkSessionDoQuestion',
     PkSessionLoadSuccess = 'PkSessionLoadSuccess',
     GetCurrentPkSessionId = 'GetCurrentPkSessionId',
+    PVPMatchEnter = 'PVPMatchEnter', 
+    PVPMatchLeave = 'PVPMatchLeave', 
 }
 
 export enum GameServiceAction {
