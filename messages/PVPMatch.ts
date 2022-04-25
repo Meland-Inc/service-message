@@ -21,13 +21,13 @@ export interface PVPMatchEnterInput{
 }
 
 export interface PVPMatchEnterOutput{
-    succese:boolean;
+    succese: boolean;
 }
 
 export interface PVPMatchLeaveInput{
     userId: string;
 }
 
-export interface PVPMatchLeaveInput{
+export interface PVPMatchLeaveOutput{
     succese : boolean;
 }
