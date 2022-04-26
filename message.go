@@ -1340,8 +1340,8 @@ func (j *PVPMatchEnterInput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["userId"]; !ok || v == nil {
-		return fmt.Errorf("field userId: required")
+	if v, ok := raw["player"]; !ok || v == nil {
+		return fmt.Errorf("field player: required")
 	}
 	type Plain PVPMatchEnterInput
 	var plain Plain
@@ -2000,8 +2000,8 @@ func (j *PVPMatchLeaveInput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["userId"]; !ok || v == nil {
-		return fmt.Errorf("field userId: required")
+	if v, ok := raw["player"]; !ok || v == nil {
+		return fmt.Errorf("field player: required")
 	}
 	type Plain PVPMatchLeaveInput
 	var plain Plain
@@ -3838,8 +3838,8 @@ const NFTTraitWearingPositionShoes NFTTraitWearingPosition = "Shoes"
 const NFTTraitWearingPositionUpperBody NFTTraitWearingPosition = "Upper Body"
 
 type PVPMatchEnterInput struct {
-	// UserId corresponds to the JSON schema field "userId".
-	UserId string `json:"userId"`
+	// Player corresponds to the JSON schema field "player".
+	Player PVPPlayer `json:"player"`
 }
 
 type PVPMatchEnterOutput struct {
@@ -3848,8 +3848,8 @@ type PVPMatchEnterOutput struct {
 }
 
 type PVPMatchLeaveInput struct {
-	// UserId corresponds to the JSON schema field "userId".
-	UserId string `json:"userId"`
+	// Player corresponds to the JSON schema field "player".
+	Player PVPPlayer `json:"player"`
 }
 
 type PVPMatchLeaveOutput struct {
