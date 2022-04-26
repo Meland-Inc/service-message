@@ -17,7 +17,7 @@ export interface PVPRoomReadyOutput {
 }
 
 export interface PVPMatchEnterInput{
-    userId: string;
+    player: PVPPlayer;
 }
 
 export interface PVPMatchEnterOutput{
@@ -25,7 +25,7 @@ export interface PVPMatchEnterOutput{
 }
 
 export interface PVPMatchLeaveInput{
-    userId: string;
+    player: PVPPlayer;
 }
 
 export interface PVPMatchLeaveOutput{
