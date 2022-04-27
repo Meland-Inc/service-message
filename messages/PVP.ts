@@ -1,4 +1,12 @@
+/**
+ * @TJS-type integer
+ */
+ type Int32 = number;
+ type integer = Int32;
+
+
 import { PlayerInfo } from "./Player";
+
 
 export enum PVPType{
     // 匹配模式
@@ -77,8 +85,8 @@ export interface GetCurrentPkSessionIdOutput {
 
 export interface PlayerAvatar{
     nftId: string;
-    cid: number;
-    pos: number;
+    cid: integer;
+    pos: integer;
 }
 
 export interface PvpPlayerProfile{
