@@ -38,6 +38,7 @@ export enum PVPServiceAction {
     GetCurrentPkSessionId = 'GetCurrentPkSessionId',
     PVPMatchEnter = 'PVPMatchEnter', 
     PVPMatchLeave = 'PVPMatchLeave', 
+    GetPlayerPvpProfile = 'GetPlayerPvpProfile',
 }
 
 export enum GameServiceAction {
