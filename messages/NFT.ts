@@ -540,37 +540,6 @@ export interface GetUserNFTsByUserIdAndAddressOutput {
 
 
 
-export interface UsingNFT {
-    nftId:string;
-
-    /**
-     * 用户id
-    */
-    userId: string;
-
-    /**
-     * 游戏角色id
-    */
-    playerId: string;
-
-    cid:integer;
-
-    /**
-      * 装备位置 对时装和装备有效
-    */
-    avatarPos:integer;
-}
-
-
-export interface GetPlayerUsingNftsByUserIdInput{
-    userId: string;
-}
-
-export interface GetPlayerUsingNftsByUserIdOutput{
-    userId: string;
-
-    usingNfts: UsingNFT[];
-}
 
 export interface UseEquipment{
     nftId:string;
@@ -606,3 +575,45 @@ export interface UnloadEquipment{
     */
     playerId: string;
 }
+
+
+export interface UsingNFT {
+    nftId:string;
+
+    /**
+     * 用户id
+    */
+    userId: string;
+
+    /**
+     * 游戏角色id
+    */
+    playerId: string;
+
+    cid:integer;
+
+    /**
+      * 装备位置 对时装和装备有效
+    */
+    avatarPos:integer;
+}
+export interface UserUsingNft{
+    userId: string;
+    usingNfts: UsingNFT[];
+}
+export interface GetPlayerUsingNftsByUserIdInput{
+    userId: string;
+}
+// TODO ...  use struct UserUsingNft by pvp next version
+export interface GetPlayerUsingNftsByUserIdOutput{
+    userId: string;
+
+    usingNfts: UsingNFT[];
+}
+export interface MultiGetPlayerUsingNftsByUserIdInput{
+    userIds: string[];
+}
+export interface MultiGetPlayerUsingNftsByUserIdOutput{
+    UserUsingNfts: UserUsingNft[];
+}
+

@@ -89,10 +89,28 @@ export interface PlayerKilled {
     userId: string;
 }
 
+
+export interface PlayerInfo{
+    userId: string;
+    
+    playerName: string;
+
+    playerId: string;
+
+    icon: string;
+
+    feature: string;
+
+    /**
+     * 角色cid (男性 1001 / 女性 1002)
+    */
+    roleCId: integer;
+}
+
 export interface GetPlayerInfoByUserIdInput {
     userId: string;
 }
-
+ // TODO ...  use struct PlayerInfo by pvp next version
 export interface GetPlayerInfoByUserIdOutput {
     userId: string;
     
@@ -109,3 +127,13 @@ export interface GetPlayerInfoByUserIdOutput {
     */
     roleCId: integer;
 }
+
+export interface MultiGetPlayerInfoByUserIdInput {
+    userIds: string[];
+}
+export interface MultiGetPlayerInfoByUserIdOutput {
+    playerInfos : PlayerInfo[];
+}
+
+
+

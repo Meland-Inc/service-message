@@ -1,3 +1,5 @@
+import { PlayerInfo } from "./Player";
+
 export enum PVPPKSessionStatus {
     // 玩家资源加载中
     preloading = 'preloading',
@@ -63,4 +65,18 @@ export interface GetCurrentPkSessionIdInput {
 
 export interface GetCurrentPkSessionIdOutput {
     pkSessionId: string;
+}
+
+
+export interface PlayerAvatar{
+    nftId: string;
+    cid: number;
+    pos: number;
+}
+
+export interface PvpPlayerProfile{
+    playerString: string;
+    score: number;
+    baseInfo: PlayerInfo;
+    avatar: PlayerAvatar[];
 }
