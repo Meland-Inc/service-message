@@ -4226,13 +4226,13 @@ type PkSessionUITickOutput map[string]interface{}
 
 type PlayerAvatar struct {
 	// Cid corresponds to the JSON schema field "cid".
-	Cid float64 `json:"cid"`
+	Cid int `json:"cid"`
 
 	// NftId corresponds to the JSON schema field "nftId".
 	NftId string `json:"nftId"`
 
 	// Pos corresponds to the JSON schema field "pos".
-	Pos float64 `json:"pos"`
+	Pos int `json:"pos"`
 }
 
 // 玩家死亡事件, 当玩家死亡时触发
