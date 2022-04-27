@@ -1,5 +1,12 @@
 import { PlayerInfo } from "./Player";
 
+export enum PVPType{
+    // 匹配模式
+    pvpTypeMatch = 'pvpTypeMatch',
+    // pk 模式
+    pvpTypePk = 'pvpTypePk',
+}
+
 export enum PVPPKSessionStatus {
     // 玩家资源加载中
     preloading = 'preloading',
