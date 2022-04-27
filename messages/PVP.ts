@@ -80,3 +80,11 @@ export interface PvpPlayerProfile{
     baseInfo: PlayerInfo;
     avatar: PlayerAvatar[];
 }
+
+export interface GetPlayerPvpProfileInput {
+    playerId: string;
+}
+
+export interface GetPlayerPvpProfileOutput {
+    profile: PvpPlayerProfile;
+}
