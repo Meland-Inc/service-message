@@ -91,7 +91,7 @@ export interface PlayerAvatar{
 
 export interface PvpPlayerProfile{
     playerId: string;
-    score: number;
+    score: integer;
     baseInfo: PlayerInfo;
     avatar: PlayerAvatar[];
 }
