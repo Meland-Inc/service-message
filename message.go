@@ -4335,7 +4335,7 @@ type PvpPlayerProfile struct {
 	PlayerId string `json:"playerId"`
 
 	// Score corresponds to the JSON schema field "score".
-	Score float64 `json:"score"`
+	Score int `json:"score"`
 }
 
 type Question struct {
