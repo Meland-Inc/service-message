@@ -1599,8 +1599,8 @@ func (j *PvpPlayerProfile) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["baseInfo"]; !ok || v == nil {
 		return fmt.Errorf("field baseInfo: required")
 	}
-	if v, ok := raw["playerString"]; !ok || v == nil {
-		return fmt.Errorf("field playerString: required")
+	if v, ok := raw["playerId"]; !ok || v == nil {
+		return fmt.Errorf("field playerId: required")
 	}
 	if v, ok := raw["score"]; !ok || v == nil {
 		return fmt.Errorf("field score: required")
@@ -4306,8 +4306,8 @@ type PvpPlayerProfile struct {
 	// BaseInfo corresponds to the JSON schema field "baseInfo".
 	BaseInfo PlayerInfo `json:"baseInfo"`
 
-	// PlayerString corresponds to the JSON schema field "playerString".
-	PlayerString string `json:"playerString"`
+	// PlayerId corresponds to the JSON schema field "playerId".
+	PlayerId string `json:"playerId"`
 
 	// Score corresponds to the JSON schema field "score".
 	Score float64 `json:"score"`
