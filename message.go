@@ -1699,8 +1699,8 @@ func (j *PvpPlayerRank) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["rank"]; !ok || v == nil {
 		return fmt.Errorf("field rank: required")
 	}
-	if v, ok := raw["socre"]; !ok || v == nil {
-		return fmt.Errorf("field socre: required")
+	if v, ok := raw["score"]; !ok || v == nil {
+		return fmt.Errorf("field score: required")
 	}
 	type Plain PvpPlayerRank
 	var plain Plain
@@ -4435,8 +4435,8 @@ type PvpPlayerRank struct {
 	// Rank corresponds to the JSON schema field "rank".
 	Rank int `json:"rank"`
 
-	// Socre corresponds to the JSON schema field "socre".
-	Socre int `json:"socre"`
+	// Score corresponds to the JSON schema field "score".
+	Score int `json:"score"`
 }
 
 type Question struct {
