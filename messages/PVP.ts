@@ -103,3 +103,21 @@ export interface GetPlayerPvpProfileInput {
 export interface GetPlayerPvpProfileOutput {
     profile: PvpPlayerProfile;
 }
+
+
+export interface PvpPlayerRank{
+    rank: integer;
+    socre: integer;
+    baseInfo: PlayerInfo;
+    avatar: PlayerAvatar[];    
+}
+
+export interface GetPlayerPvpRankInput {
+    playerId: string;
+}
+
+export interface GetPlayerPvpRankOutput {
+    rankList: PvpPlayerRank[];
+    selfRank: PvpPlayerRank;
+}
+s
