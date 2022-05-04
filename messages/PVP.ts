@@ -120,4 +120,3 @@ export interface GetPlayerPvpRankOutput {
     rankList: PvpPlayerRank[];
     selfRank: PvpPlayerRank;
 }
-s
