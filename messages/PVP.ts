@@ -108,7 +108,7 @@ export interface GetPlayerPvpProfileOutput {
 export interface PvpPlayerRank{
     playerId: string;
     rank: integer;
-    socre: integer;
+    score: integer;
     baseInfo: PlayerInfo;
     avatar: PlayerAvatar[];    
 }
