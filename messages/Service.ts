@@ -39,6 +39,7 @@ export enum PVPServiceAction {
     PVPMatchEnter = 'PVPMatchEnter', 
     PVPMatchLeave = 'PVPMatchLeave', 
     GetPlayerPvpProfile = 'GetPlayerPvpProfile',
+    GetPlayerPvpRank = 'GetPlayerPvpRank',
 }
 
 export enum GameServiceAction {
