@@ -5,6 +5,7 @@
  type integer = Int32;
 
 
+import { NFT } from "./NFT";
 import { PlayerInfo } from "./Player";
 
 
@@ -87,13 +88,14 @@ export interface PlayerAvatar{
     nftId: string;
     cid: integer;
     pos: integer;
+    nftData: NFT;
 }
 
 export interface PvpPlayerProfile{
     playerId: string;
     score: integer;
     baseInfo: PlayerInfo;
-    avatar: PlayerAvatar[];
+    avatars: PlayerAvatar[];
 }
 
 export interface GetPlayerPvpProfileInput {
@@ -110,7 +112,7 @@ export interface PvpPlayerRank{
     rank: integer;
     score: integer;
     baseInfo: PlayerInfo;
-    avatar: PlayerAvatar[];    
+    avatars: PlayerAvatar[];
 }
 
 export interface GetPlayerPvpRankInput {
