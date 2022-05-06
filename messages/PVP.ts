@@ -88,7 +88,7 @@ export interface PlayerAvatar{
     nftId: string;
     cid: integer;
     pos: integer;
-    nftData: NFT;
+    nftJson: string;
 }
 
 export interface PvpPlayerProfile{
