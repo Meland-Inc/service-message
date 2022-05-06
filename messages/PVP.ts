@@ -125,13 +125,13 @@ export interface GetPlayerPvpRankOutput {
 
 
 export interface PvpHistory{
-    pvpType: PVPType;
     winner: string;
     winnerName: string;
     winnerScore: integer;
     loser: string;
     loserName: string;
     loserScore: integer;
+    pvpType: string;
     ScoreOffset: integer;
     timeSec: integer;
 }
