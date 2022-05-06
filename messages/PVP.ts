@@ -5,7 +5,6 @@
  type integer = Int32;
 
 
-import { NFT } from "./NFT";
 import { PlayerInfo } from "./Player";
 
 
