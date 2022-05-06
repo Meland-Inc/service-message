@@ -122,3 +122,24 @@ export interface GetPlayerPvpRankOutput {
     rankList: PvpPlayerRank[];
     selfRank: PvpPlayerRank;
 }
+
+
+export interface PvpHistory{
+    pvpType: PVPType;
+    winner: string;
+    winnerName: string;
+    winnerScore: integer;
+    loser: string;
+    loserName: string;
+    loserScore: integer;
+    ScoreOffset: integer;
+    timeSec: integer;
+}
+
+export interface GetPvpHistoryInput {
+    playerId: string;
+}
+
+export interface GetPvpHistoryOutput {
+    historyList: PvpHistory[];
+}
