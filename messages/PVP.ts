@@ -34,6 +34,15 @@ export enum PVPUserType {
     user = 'user',
 }
 
+
+export enum PVPEndType{
+    // 胜负局
+    endTypeWin = 'endTypeWin',
+    // 平局
+    endTypeTie = 'endTypeTie',
+}
+
+
 export interface PVPPlayer {
     id: string;
     type: PVPUserType;
@@ -125,14 +134,15 @@ export interface GetPlayerPvpRankOutput {
 
 
 export interface PvpHistory{
+    pvpType: string;
     winner: string;
     winnerName: string;
     winnerScore: integer;
     loser: string;
     loserName: string;
     loserScore: integer;
-    pvpType: string;
-    ScoreOffset: integer;
+    scoreOffset: integer;
+    endType: PVPEndType;
     timeSec: integer;
 }
 
