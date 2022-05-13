@@ -153,3 +153,11 @@ export interface GetPvpHistoryInput {
 export interface GetPvpHistoryOutput {
     historyList: PvpHistory[];
 }
+
+export interface PvpSurrenderInput {
+    pkSessionId: string;
+    playerId: string;
+}
+export interface PvpSurrenderOutput{
+    success: boolean; 
+}
