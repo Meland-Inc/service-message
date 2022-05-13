@@ -141,7 +141,7 @@ export interface PvpHistory{
     loser: string;
     loserName: string;
     loserScore: integer;
-    scoreOffset: integer;
+    scoreOffSet: integer;
     endType: string;
     timeSec: integer;
 }
