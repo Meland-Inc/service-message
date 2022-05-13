@@ -2593,6 +2593,9 @@ func (j *PvpHistory) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
+	if v, ok := raw["ScoreChange"]; !ok || v == nil {
+		return fmt.Errorf("field ScoreChange: required")
+	}
 	if v, ok := raw["endType"]; !ok || v == nil {
 		return fmt.Errorf("field endType: required")
 	}
@@ -2607,9 +2610,6 @@ func (j *PvpHistory) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["pvpType"]; !ok || v == nil {
 		return fmt.Errorf("field pvpType: required")
-	}
-	if v, ok := raw["scoreOffset"]; !ok || v == nil {
-		return fmt.Errorf("field scoreOffset: required")
 	}
 	if v, ok := raw["timeSec"]; !ok || v == nil {
 		return fmt.Errorf("field timeSec: required")
@@ -4571,6 +4571,9 @@ type Prefetch struct {
 }
 
 type PvpHistory struct {
+	// ScoreChange corresponds to the JSON schema field "ScoreChange".
+	ScoreChange int `json:"ScoreChange"`
+
 	// EndType corresponds to the JSON schema field "endType".
 	EndType string `json:"endType"`
 
@@ -4585,9 +4588,6 @@ type PvpHistory struct {
 
 	// PvpType corresponds to the JSON schema field "pvpType".
 	PvpType string `json:"pvpType"`
-
-	// ScoreOffset corresponds to the JSON schema field "scoreOffset".
-	ScoreOffset int `json:"scoreOffset"`
 
 	// TimeSec corresponds to the JSON schema field "timeSec".
 	TimeSec int `json:"timeSec"`
