@@ -1910,8 +1910,8 @@ func (j *PvpHistory) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["pvpType"]; !ok || v == nil {
 		return fmt.Errorf("field pvpType: required")
 	}
-	if v, ok := raw["scoreOffSet"]; !ok || v == nil {
-		return fmt.Errorf("field scoreOffSet: required")
+	if v, ok := raw["scoreOffset"]; !ok || v == nil {
+		return fmt.Errorf("field scoreOffset: required")
 	}
 	if v, ok := raw["timeSec"]; !ok || v == nil {
 		return fmt.Errorf("field timeSec: required")
@@ -4548,8 +4548,8 @@ type PvpHistory struct {
 	// PvpType corresponds to the JSON schema field "pvpType".
 	PvpType string `json:"pvpType"`
 
-	// ScoreOffSet corresponds to the JSON schema field "scoreOffSet".
-	ScoreOffSet int `json:"scoreOffSet"`
+	// ScoreOffset corresponds to the JSON schema field "scoreOffset".
+	ScoreOffset int `json:"scoreOffset"`
 
 	// TimeSec corresponds to the JSON schema field "timeSec".
 	TimeSec int `json:"timeSec"`
