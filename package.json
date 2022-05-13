@@ -1,6 +1,6 @@
 {
   "name": "@Meland-Inc/service-message",
-  "version": "1.0.75",
+  "version": "1.0.76",
   "main": "dist",
   "module": "dist/esm",
   "repository": "git@github.com:Meland-Inc/service-message.git",
