@@ -7,6 +7,16 @@ export interface CreatePVPRoomOutput {
     roomId: string;
 }
 
+export interface PVPRoomPreLeaveInput {
+    roomId: string;
+
+    player: PVPPlayer;
+}
+
+export interface PVPRoomPreLeaveOutput {
+    canLeave: boolean;
+}
+
 export interface PVPRoomReadyInput {
     player: PVPPlayer;
     pvpRoomId: string;

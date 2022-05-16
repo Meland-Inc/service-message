@@ -83,6 +83,13 @@ export interface PkSessionLoadSuccessOutput {
 
 }
 
+export interface PkSessionAgainInput {
+    pkSessionId: string;
+}
+export interface PkSessionAgainOutput {
+    pkSessionId: string;
+}
+
 export interface GetCurrentPkSessionIdInput {
     player: PVPPlayer;
 }

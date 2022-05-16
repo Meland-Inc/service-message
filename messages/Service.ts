@@ -32,9 +32,11 @@ export enum MelandServiceAction {
 export enum PVPServiceAction {
     CreatePVPRoom = 'CreatePVPRoom',
     PVPRoomReady = 'PVPRoomReady',
+    PVPRoomPreLeave = 'PVPRoomPreLeave',
     PkSessionUITick = 'PkSessionUITick',
     PkSessionDoQuestion = 'PkSessionDoQuestion',
     PkSessionLoadSuccess = 'PkSessionLoadSuccess',
+    PkSessionAgain = 'PkSessionAgain',
     GetCurrentPkSessionId = 'GetCurrentPkSessionId',
     PVPMatchEnter = 'PVPMatchEnter', 
     PVPMatchLeave = 'PVPMatchLeave', 
