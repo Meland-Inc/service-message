@@ -87,7 +87,7 @@ export interface PkSessionAgainInput {
     pkSessionId: string;
 }
 export interface PkSessionAgainOutput {
-    pkSessionId: string;
+    pkRoomId: string;
 }
 
 export interface GetCurrentPkSessionIdInput {
