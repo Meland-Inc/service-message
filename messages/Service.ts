@@ -41,6 +41,7 @@ export enum PVPServiceAction {
     GetPlayerPvpProfile = 'GetPlayerPvpProfile',
     GetPlayerPvpRank = 'GetPlayerPvpRank',
     GetPvpHistory = 'GetPvpHistory',
+    PvpSurrender = 'PvpSurrender',
 }
 
 export enum GameServiceAction {
