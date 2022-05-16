@@ -2223,8 +2223,8 @@ func (j *PkSessionAgainOutput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["pkSessionId"]; !ok || v == nil {
-		return fmt.Errorf("field pkSessionId: required")
+	if v, ok := raw["pkRoomId"]; !ok || v == nil {
+		return fmt.Errorf("field pkRoomId: required")
 	}
 	type Plain PkSessionAgainOutput
 	var plain Plain
@@ -4521,8 +4521,8 @@ type PkSessionAgainInput struct {
 }
 
 type PkSessionAgainOutput struct {
-	// PkSessionId corresponds to the JSON schema field "pkSessionId".
-	PkSessionId string `json:"pkSessionId"`
+	// PkRoomId corresponds to the JSON schema field "pkRoomId".
+	PkRoomId string `json:"pkRoomId"`
 }
 
 type PkSessionDoQuestionInput struct {
