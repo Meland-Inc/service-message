@@ -13,6 +13,7 @@
     "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm"
   },
   "dependencies": {
+    "tslib": "^2.4.0",
     "typescript": "^4.4.3",
     "typescript-json-schema": "^0.53.0"
   }
