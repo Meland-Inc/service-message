@@ -137,3 +137,37 @@ export interface MultiGetPlayerInfoByUserIdOutput {
 
 
 
+
+export interface PlayerItemSocket{
+    // item socket postion
+    position: integer;
+
+    // item socket level
+    level: integer; 
+}
+export interface GetPlayerItemSocketsInput {
+    userId: string;
+
+    playerId: string;
+}
+export interface GetPlayerItemSocketsOutput {
+    userId: string;
+
+    playerId: string;
+
+    itemSockets:PlayerItemSocket[];
+}
+export interface UpgradePlayerItemSocketsInput {
+    userId: string;
+
+    playerId: string;
+
+    itemSockets:PlayerItemSocket[];
+}
+export interface UpgradePlayerItemSocketsOutput {
+    userId: string;
+
+    playerId: string;
+
+    success: boolean; 
+}
