@@ -155,19 +155,22 @@ export interface GetPlayerItemSocketsOutput {
 
     playerId: string;
 
-    itemSockets:PlayerItemSocket[];
+    itemSockets: PlayerItemSocket[];
 }
 export interface UpgradePlayerItemSocketsInput {
     userId: string;
 
     playerId: string;
 
-    itemSockets:PlayerItemSocket[];
+    itemSockets: PlayerItemSocket[];
 }
 export interface UpgradePlayerItemSocketsOutput {
     userId: string;
 
     playerId: string;
 
-    success: boolean; 
+     /**
+     * 是否成功
+     */
+    success: boolean;
 }
