@@ -55,6 +55,8 @@ export enum GameAccountServiceAction {
     MultiGetPlayerInfoByUserId = 'MultiGetPlayerInfoByUserId',
     GetPlayerUsingNftsByUserId = 'GetPlayerUsingNftsByUserId',    
     MultiGetPlayerUsingNftsByUserId = 'MultiGetPlayerUsingNftsByUserId',
+    GetPlayerItemSockets = 'GetPlayerItemSockets',
+    UpgradePlayerItemSockets = 'UpgradePlayerItemSockets'
 }
 
 export enum Web3ServiceAction {
