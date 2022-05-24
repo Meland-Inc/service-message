@@ -5057,7 +5057,7 @@ type UpgradePlayerItemSocketsOutput struct {
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
 
-	// Success corresponds to the JSON schema field "success".
+	// 是否成功
 	Success bool `json:"success"`
 
 	// UserId corresponds to the JSON schema field "userId".
