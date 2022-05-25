@@ -17,6 +17,9 @@ export enum MelandServiceAction {
     GetUserWeb3Profile = 'GetUserWeb3Profile',
     GetUserIdByAddress = 'GetUserIdByAddress',
 
+    // 获取对用户特殊资产的跟踪
+    GetUserTrack = 'GetUserTrack',
+
     // 燃烧用户的ditamin
     BurnDitamin = 'BurnDitamin',
 
