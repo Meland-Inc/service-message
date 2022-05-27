@@ -1359,37 +1359,32 @@ func (j *GetPlayerInfoByUserIdInput) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type GetPlayerInfoByUserIdOutput struct {
-	// CurExp corresponds to the JSON schema field "curExp".
-	CurExp int `json:"curExp"`
-
-	// CurHp corresponds to the JSON schema field "curHp".
-	CurHp int `json:"curHp"`
-
-	// Feature corresponds to the JSON schema field "feature".
-	Feature string `json:"feature"`
-
-	// Icon corresponds to the JSON schema field "icon".
-	Icon string `json:"icon"`
-
-	// Level corresponds to the JSON schema field "level".
-	Level int `json:"level"`
-
-	// PlayerId corresponds to the JSON schema field "playerId".
-	PlayerId string `json:"playerId"`
-
-	// PlayerName corresponds to the JSON schema field "playerName".
-	PlayerName string `json:"playerName"`
-
-	// 角色cid (男性 1001 / 女性 1002)
-	RoleCId int `json:"roleCId"`
-
-	// UserId corresponds to the JSON schema field "userId".
-	UserId string `json:"userId"`
+// UnmarshalJSON implements json.Unmarshaler.
+func (j *UpgradePlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
+	var raw map[string]interface{}
+	if err := json.Unmarshal(b, &raw); err != nil {
+		return err
+	}
+	if v, ok := raw["itemSockets"]; !ok || v == nil {
+		return fmt.Errorf("field itemSockets: required")
+	}
+	if v, ok := raw["playerId"]; !ok || v == nil {
+		return fmt.Errorf("field playerId: required")
+	}
+	if v, ok := raw["userId"]; !ok || v == nil {
+		return fmt.Errorf("field userId: required")
+	}
+	type Plain UpgradePlayerItemSocketsInput
+	var plain Plain
+	if err := json.Unmarshal(b, &plain); err != nil {
+		return err
+	}
+	*j = UpgradePlayerItemSocketsInput(plain)
+	return nil
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
+func (j *PlayerInfo) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -1420,6 +1415,29 @@ func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
+	}
+	type Plain PlayerInfo
+	var plain Plain
+	if err := json.Unmarshal(b, &plain); err != nil {
+		return err
+	}
+	*j = PlayerInfo(plain)
+	return nil
+}
+
+type GetPlayerInfoByUserIdOutput struct {
+	// PlayerData corresponds to the JSON schema field "playerData".
+	PlayerData PlayerInfo `json:"playerData"`
+}
+
+// UnmarshalJSON implements json.Unmarshaler.
+func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
+	var raw map[string]interface{}
+	if err := json.Unmarshal(b, &raw); err != nil {
+		return err
+	}
+	if v, ok := raw["playerData"]; !ok || v == nil {
+		return fmt.Errorf("field playerData: required")
 	}
 	type Plain GetPlayerInfoByUserIdOutput
 	var plain Plain
@@ -1460,26 +1478,29 @@ func (j *GetPlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *UpgradePlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
+func (j *UpdateUserNFT) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["itemSockets"]; !ok || v == nil {
-		return fmt.Errorf("field itemSockets: required")
+	if v, ok := raw["etag"]; !ok || v == nil {
+		return fmt.Errorf("field etag: required")
 	}
-	if v, ok := raw["playerId"]; !ok || v == nil {
-		return fmt.Errorf("field playerId: required")
+	if v, ok := raw["fromLandId"]; !ok || v == nil {
+		return fmt.Errorf("field fromLandId: required")
+	}
+	if v, ok := raw["nft"]; !ok || v == nil {
+		return fmt.Errorf("field nft: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain UpgradePlayerItemSocketsInput
+	type Plain UpdateUserNFT
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = UpgradePlayerItemSocketsInput(plain)
+	*j = UpdateUserNFT(plain)
 	return nil
 }
 
@@ -1563,29 +1584,26 @@ func (j *GetPlayerPvpProfileInput) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *UpdateUserNFT) UnmarshalJSON(b []byte) error {
+func (j *UnloadEquipment) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["etag"]; !ok || v == nil {
-		return fmt.Errorf("field etag: required")
+	if v, ok := raw["nftId"]; !ok || v == nil {
+		return fmt.Errorf("field nftId: required")
 	}
-	if v, ok := raw["fromLandId"]; !ok || v == nil {
-		return fmt.Errorf("field fromLandId: required")
-	}
-	if v, ok := raw["nft"]; !ok || v == nil {
-		return fmt.Errorf("field nft: required")
+	if v, ok := raw["playerId"]; !ok || v == nil {
+		return fmt.Errorf("field playerId: required")
 	}
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain UpdateUserNFT
+	type Plain UnloadEquipment
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = UpdateUserNFT(plain)
+	*j = UnloadEquipment(plain)
 	return nil
 }
 
@@ -1613,63 +1631,6 @@ func (j *PlayerAvatar) UnmarshalJSON(b []byte) error {
 		return err
 	}
 	*j = PlayerAvatar(plain)
-	return nil
-}
-
-// UnmarshalJSON implements json.Unmarshaler.
-func (j *UnloadEquipment) UnmarshalJSON(b []byte) error {
-	var raw map[string]interface{}
-	if err := json.Unmarshal(b, &raw); err != nil {
-		return err
-	}
-	if v, ok := raw["nftId"]; !ok || v == nil {
-		return fmt.Errorf("field nftId: required")
-	}
-	if v, ok := raw["playerId"]; !ok || v == nil {
-		return fmt.Errorf("field playerId: required")
-	}
-	if v, ok := raw["userId"]; !ok || v == nil {
-		return fmt.Errorf("field userId: required")
-	}
-	type Plain UnloadEquipment
-	var plain Plain
-	if err := json.Unmarshal(b, &plain); err != nil {
-		return err
-	}
-	*j = UnloadEquipment(plain)
-	return nil
-}
-
-// UnmarshalJSON implements json.Unmarshaler.
-func (j *PlayerInfo) UnmarshalJSON(b []byte) error {
-	var raw map[string]interface{}
-	if err := json.Unmarshal(b, &raw); err != nil {
-		return err
-	}
-	if v, ok := raw["feature"]; !ok || v == nil {
-		return fmt.Errorf("field feature: required")
-	}
-	if v, ok := raw["icon"]; !ok || v == nil {
-		return fmt.Errorf("field icon: required")
-	}
-	if v, ok := raw["playerId"]; !ok || v == nil {
-		return fmt.Errorf("field playerId: required")
-	}
-	if v, ok := raw["playerName"]; !ok || v == nil {
-		return fmt.Errorf("field playerName: required")
-	}
-	if v, ok := raw["roleCId"]; !ok || v == nil {
-		return fmt.Errorf("field roleCId: required")
-	}
-	if v, ok := raw["userId"]; !ok || v == nil {
-		return fmt.Errorf("field userId: required")
-	}
-	type Plain PlayerInfo
-	var plain Plain
-	if err := json.Unmarshal(b, &plain); err != nil {
-		return err
-	}
-	*j = PlayerInfo(plain)
 	return nil
 }
 
@@ -4840,11 +4801,20 @@ type PlayerDeath struct {
 }
 
 type PlayerInfo struct {
+	// CurExp corresponds to the JSON schema field "curExp".
+	CurExp int `json:"curExp"`
+
+	// CurHp corresponds to the JSON schema field "curHp".
+	CurHp int `json:"curHp"`
+
 	// Feature corresponds to the JSON schema field "feature".
 	Feature string `json:"feature"`
 
 	// Icon corresponds to the JSON schema field "icon".
 	Icon string `json:"icon"`
+
+	// Level corresponds to the JSON schema field "level".
+	Level int `json:"level"`
 
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
