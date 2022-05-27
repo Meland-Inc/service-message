@@ -1360,11 +1360,20 @@ func (j *GetPlayerInfoByUserIdInput) UnmarshalJSON(b []byte) error {
 }
 
 type GetPlayerInfoByUserIdOutput struct {
+	// CurExp corresponds to the JSON schema field "curExp".
+	CurExp int `json:"curExp"`
+
+	// CurHp corresponds to the JSON schema field "curHp".
+	CurHp int `json:"curHp"`
+
 	// Feature corresponds to the JSON schema field "feature".
 	Feature string `json:"feature"`
 
 	// Icon corresponds to the JSON schema field "icon".
 	Icon string `json:"icon"`
+
+	// Level corresponds to the JSON schema field "level".
+	Level int `json:"level"`
 
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
@@ -1385,11 +1394,20 @@ func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
+	if v, ok := raw["curExp"]; !ok || v == nil {
+		return fmt.Errorf("field curExp: required")
+	}
+	if v, ok := raw["curHp"]; !ok || v == nil {
+		return fmt.Errorf("field curHp: required")
+	}
 	if v, ok := raw["feature"]; !ok || v == nil {
 		return fmt.Errorf("field feature: required")
 	}
 	if v, ok := raw["icon"]; !ok || v == nil {
 		return fmt.Errorf("field icon: required")
+	}
+	if v, ok := raw["level"]; !ok || v == nil {
+		return fmt.Errorf("field level: required")
 	}
 	if v, ok := raw["playerId"]; !ok || v == nil {
 		return fmt.Errorf("field playerId: required")
