@@ -126,6 +126,12 @@ export interface GetPlayerInfoByUserIdOutput {
      * 角色cid (男性 1001 / 女性 1002)
     */
     roleCId: integer;
+    
+    level: integer;
+
+    curExp: integer;
+    
+    curHp: integer;
 }
 
 export interface MultiGetPlayerInfoByUserIdInput {
