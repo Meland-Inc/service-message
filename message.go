@@ -995,11 +995,11 @@ func (j *GameAccountServiceAction) UnmarshalJSON(b []byte) error {
 }
 
 const GameAccountServiceActionGetPlayerInfoByUserId GameAccountServiceAction = "GetPlayerInfoByUserId"
-const GameAccountServiceActionGetPlayerItemSockets GameAccountServiceAction = "GetPlayerItemSockets"
+const GameAccountServiceActionGetPlayerItemSlots GameAccountServiceAction = "GetPlayerItemSlots"
 const GameAccountServiceActionGetPlayerUsingNftsByUserId GameAccountServiceAction = "GetPlayerUsingNftsByUserId"
 const GameAccountServiceActionMultiGetPlayerInfoByUserId GameAccountServiceAction = "MultiGetPlayerInfoByUserId"
 const GameAccountServiceActionMultiGetPlayerUsingNftsByUserId GameAccountServiceAction = "MultiGetPlayerUsingNftsByUserId"
-const GameAccountServiceActionUpgradePlayerItemSockets GameAccountServiceAction = "UpgradePlayerItemSockets"
+const GameAccountServiceActionUpgradePlayerItemSlots GameAccountServiceAction = "UpgradePlayerItemSlots"
 
 type GameServiceAction string
 
@@ -1257,7 +1257,7 @@ func (j *GetCurrentPkSessionIdOutput) UnmarshalJSON(b []byte) error {
 type GetInitLandAttributionsInput map[string]interface{}
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *UpgradePlayerItemSocketsOutput) UnmarshalJSON(b []byte) error {
+func (j *UpgradePlayerItemSlotsOutput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -1271,12 +1271,12 @@ func (j *UpgradePlayerItemSocketsOutput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain UpgradePlayerItemSocketsOutput
+	type Plain UpgradePlayerItemSlotsOutput
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = UpgradePlayerItemSocketsOutput(plain)
+	*j = UpgradePlayerItemSlotsOutput(plain)
 	return nil
 }
 
@@ -1360,13 +1360,13 @@ func (j *GetPlayerInfoByUserIdInput) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *UpgradePlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
+func (j *UpgradePlayerItemSlotsInput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["itemSockets"]; !ok || v == nil {
-		return fmt.Errorf("field itemSockets: required")
+	if v, ok := raw["itemSlots"]; !ok || v == nil {
+		return fmt.Errorf("field itemSlots: required")
 	}
 	if v, ok := raw["playerId"]; !ok || v == nil {
 		return fmt.Errorf("field playerId: required")
@@ -1374,12 +1374,12 @@ func (j *UpgradePlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain UpgradePlayerItemSocketsInput
+	type Plain UpgradePlayerItemSlotsInput
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = UpgradePlayerItemSocketsInput(plain)
+	*j = UpgradePlayerItemSlotsInput(plain)
 	return nil
 }
 
@@ -1448,7 +1448,7 @@ func (j *GetPlayerInfoByUserIdOutput) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type GetPlayerItemSocketsInput struct {
+type GetPlayerItemSlotsInput struct {
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
 
@@ -1457,7 +1457,7 @@ type GetPlayerItemSocketsInput struct {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *GetPlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
+func (j *GetPlayerItemSlotsInput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -1468,12 +1468,12 @@ func (j *GetPlayerItemSocketsInput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain GetPlayerItemSocketsInput
+	type Plain GetPlayerItemSlotsInput
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = GetPlayerItemSocketsInput(plain)
+	*j = GetPlayerItemSlotsInput(plain)
 	return nil
 }
 
@@ -1505,7 +1505,7 @@ func (j *UpdateUserNFT) UnmarshalJSON(b []byte) error {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *PlayerItemSocket) UnmarshalJSON(b []byte) error {
+func (j *PlayerItemSlot) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
@@ -1516,18 +1516,18 @@ func (j *PlayerItemSocket) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["position"]; !ok || v == nil {
 		return fmt.Errorf("field position: required")
 	}
-	type Plain PlayerItemSocket
+	type Plain PlayerItemSlot
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = PlayerItemSocket(plain)
+	*j = PlayerItemSlot(plain)
 	return nil
 }
 
-type GetPlayerItemSocketsOutput struct {
-	// ItemSockets corresponds to the JSON schema field "itemSockets".
-	ItemSockets []PlayerItemSocket `json:"itemSockets"`
+type GetPlayerItemSlotsOutput struct {
+	// ItemSlots corresponds to the JSON schema field "itemSlots".
+	ItemSlots []PlayerItemSlot `json:"itemSlots"`
 
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
@@ -1537,13 +1537,13 @@ type GetPlayerItemSocketsOutput struct {
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
-func (j *GetPlayerItemSocketsOutput) UnmarshalJSON(b []byte) error {
+func (j *GetPlayerItemSlotsOutput) UnmarshalJSON(b []byte) error {
 	var raw map[string]interface{}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
-	if v, ok := raw["itemSockets"]; !ok || v == nil {
-		return fmt.Errorf("field itemSockets: required")
+	if v, ok := raw["itemSlots"]; !ok || v == nil {
+		return fmt.Errorf("field itemSlots: required")
 	}
 	if v, ok := raw["playerId"]; !ok || v == nil {
 		return fmt.Errorf("field playerId: required")
@@ -1551,12 +1551,12 @@ func (j *GetPlayerItemSocketsOutput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["userId"]; !ok || v == nil {
 		return fmt.Errorf("field userId: required")
 	}
-	type Plain GetPlayerItemSocketsOutput
+	type Plain GetPlayerItemSlotsOutput
 	var plain Plain
 	if err := json.Unmarshal(b, &plain); err != nil {
 		return err
 	}
-	*j = GetPlayerItemSocketsOutput(plain)
+	*j = GetPlayerItemSlotsOutput(plain)
 	return nil
 }
 
@@ -4829,7 +4829,7 @@ type PlayerInfo struct {
 	UserId string `json:"userId"`
 }
 
-type PlayerItemSocket struct {
+type PlayerItemSlot struct {
 	// Level corresponds to the JSON schema field "level".
 	Level int `json:"level"`
 
@@ -4928,7 +4928,7 @@ type PvpPlayerProfile struct {
 	BaseInfo PlayerInfo `json:"baseInfo"`
 
 	// ItemSockets corresponds to the JSON schema field "itemSockets".
-	ItemSockets []PlayerItemSocket `json:"itemSockets"`
+	ItemSockets []PlayerItemSlot `json:"itemSockets"`
 
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
@@ -5119,9 +5119,9 @@ type UpdateUserNFT struct {
 	UserId string `json:"userId"`
 }
 
-type UpgradePlayerItemSocketsInput struct {
-	// ItemSockets corresponds to the JSON schema field "itemSockets".
-	ItemSockets []PlayerItemSocket `json:"itemSockets"`
+type UpgradePlayerItemSlotsInput struct {
+	// ItemSlots corresponds to the JSON schema field "itemSlots".
+	ItemSlots []PlayerItemSlot `json:"itemSlots"`
 
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
@@ -5130,7 +5130,7 @@ type UpgradePlayerItemSocketsInput struct {
 	UserId string `json:"userId"`
 }
 
-type UpgradePlayerItemSocketsOutput struct {
+type UpgradePlayerItemSlotsOutput struct {
 	// PlayerId corresponds to the JSON schema field "playerId".
 	PlayerId string `json:"playerId"`
 
@@ -5405,11 +5405,11 @@ var enumValues_DitaminProduceSource_1 = []interface{}{
 }
 var enumValues_GameAccountServiceAction = []interface{}{
 	"GetPlayerInfoByUserId",
-	"GetPlayerItemSockets",
+	"GetPlayerItemSlots",
 	"GetPlayerUsingNftsByUserId",
 	"MultiGetPlayerInfoByUserId",
 	"MultiGetPlayerUsingNftsByUserId",
-	"UpgradePlayerItemSockets",
+	"UpgradePlayerItemSlots",
 }
 var enumValues_GameServiceAction = []interface{}{
 	"LandUsingSkill",
