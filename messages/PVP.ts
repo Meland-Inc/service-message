@@ -111,7 +111,7 @@ export interface PvpPlayerProfile{
     score: integer;
     baseInfo: PlayerInfo;
     avatars: PlayerAvatar[];
-    itemSockets: PlayerItemSlot[];
+    itemSlots: PlayerItemSlot[];
 }
 
 export interface GetPlayerPvpProfileInput {
