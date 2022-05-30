@@ -5,7 +5,7 @@
  type integer = Int32;
 
 
-import { PlayerInfo, PlayerItemSocket } from "./Player";
+import { PlayerInfo, PlayerItemSlot } from "./Player";
 
 
 export enum PVPType{
@@ -111,7 +111,7 @@ export interface PvpPlayerProfile{
     score: integer;
     baseInfo: PlayerInfo;
     avatars: PlayerAvatar[];
-    itemSockets: PlayerItemSocket[];
+    itemSockets: PlayerItemSlot[];
 }
 
 export interface GetPlayerPvpProfileInput {
