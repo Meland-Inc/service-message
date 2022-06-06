@@ -139,6 +139,11 @@ export interface NFT {
     address: string;
 
     /**
+     * product Id
+     */
+    productId: string;
+
+    /**
      * NFT amount
      */
     amount: integer;
