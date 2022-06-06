@@ -2755,6 +2755,9 @@ type NFT struct {
 	// 描述当前nft存储于那条链上
 	Network string `json:"network"`
 
+	// product Id
+	ProductId string `json:"productId"`
+
 	// NFT token id
 	TokenId string `json:"tokenId"`
 
@@ -2789,6 +2792,9 @@ func (j *NFT) UnmarshalJSON(b []byte) error {
 	}
 	if v, ok := raw["network"]; !ok || v == nil {
 		return fmt.Errorf("field network: required")
+	}
+	if v, ok := raw["productId"]; !ok || v == nil {
+		return fmt.Errorf("field productId: required")
 	}
 	if v, ok := raw["tokenId"]; !ok || v == nil {
 		return fmt.Errorf("field tokenId: required")
