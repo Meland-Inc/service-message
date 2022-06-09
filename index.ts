@@ -30,3 +30,6 @@ export * from './messages/Stake';
 
 export * from './messages/PVP';
 export * from './messages/PVPMatch';
+
+
+export * from './messages/Metx';

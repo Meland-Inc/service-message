@@ -30,6 +30,9 @@ export enum MelandServiceAction {
     CheckQuestionAnswer = 'CheckQuestionAnswer',
 
     GetQuestionResourcesByTypes = 'GetQuestionResourcesByTypes',
+
+    // 执行区块链元交易
+    SendTx = 'SendTx',
 }
 
 export enum PVPServiceAction {
