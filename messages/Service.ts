@@ -32,6 +32,8 @@ export enum MelandServiceAction {
     GetQuestionResourcesByTypes = 'GetQuestionResourcesByTypes',
 
     // 执行区块链元交易
+    SendMetaTx = 'SendMetaTx',
+
     SendTx = 'SendTx',
 }
 

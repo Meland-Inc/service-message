@@ -17,3 +17,17 @@ export interface SendTxInput {
 export interface SendTxOutput {
     txId: string;
 }
+
+export interface SendMetaTxInput {
+    to: string;
+
+    value: string;
+
+    gas: number;
+
+    data: string;
+}
+
+export interface SendMetaTxOutput {
+    txId: string;
+}
