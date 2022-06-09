@@ -2073,17 +2073,8 @@ func (j *SendTxInput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["data"]; !ok || v == nil {
 		return fmt.Errorf("field data: required")
 	}
-	if v, ok := raw["from"]; !ok || v == nil {
-		return fmt.Errorf("field from: required")
-	}
 	if v, ok := raw["gas"]; !ok || v == nil {
 		return fmt.Errorf("field gas: required")
-	}
-	if v, ok := raw["nonce"]; !ok || v == nil {
-		return fmt.Errorf("field nonce: required")
-	}
-	if v, ok := raw["signature"]; !ok || v == nil {
-		return fmt.Errorf("field signature: required")
 	}
 	if v, ok := raw["to"]; !ok || v == nil {
 		return fmt.Errorf("field to: required")
@@ -2147,8 +2138,17 @@ func (j *SendMetaTxInput) UnmarshalJSON(b []byte) error {
 	if v, ok := raw["data"]; !ok || v == nil {
 		return fmt.Errorf("field data: required")
 	}
+	if v, ok := raw["from"]; !ok || v == nil {
+		return fmt.Errorf("field from: required")
+	}
 	if v, ok := raw["gas"]; !ok || v == nil {
 		return fmt.Errorf("field gas: required")
+	}
+	if v, ok := raw["nonce"]; !ok || v == nil {
+		return fmt.Errorf("field nonce: required")
+	}
+	if v, ok := raw["signature"]; !ok || v == nil {
+		return fmt.Errorf("field signature: required")
 	}
 	if v, ok := raw["to"]; !ok || v == nil {
 		return fmt.Errorf("field to: required")
@@ -5112,8 +5112,17 @@ type SendMetaTxInput struct {
 	// Data corresponds to the JSON schema field "data".
 	Data string `json:"data"`
 
+	// From corresponds to the JSON schema field "from".
+	From string `json:"from"`
+
 	// Gas corresponds to the JSON schema field "gas".
 	Gas float64 `json:"gas"`
+
+	// Nonce corresponds to the JSON schema field "nonce".
+	Nonce string `json:"nonce"`
+
+	// Signature corresponds to the JSON schema field "signature".
+	Signature string `json:"signature"`
 
 	// To corresponds to the JSON schema field "to".
 	To string `json:"to"`
@@ -5131,17 +5140,8 @@ type SendTxInput struct {
 	// Data corresponds to the JSON schema field "data".
 	Data string `json:"data"`
 
-	// From corresponds to the JSON schema field "from".
-	From string `json:"from"`
-
 	// Gas corresponds to the JSON schema field "gas".
 	Gas float64 `json:"gas"`
-
-	// Nonce corresponds to the JSON schema field "nonce".
-	Nonce string `json:"nonce"`
-
-	// Signature corresponds to the JSON schema field "signature".
-	Signature string `json:"signature"`
 
 	// To corresponds to the JSON schema field "to".
 	To string `json:"to"`
