@@ -1,4 +1,4 @@
-export interface SendTxInput {
+export interface SendMetaTxInput {
     from: string;
 
     to: string;
@@ -14,11 +14,11 @@ export interface SendTxInput {
     signature: string;
 }
 
-export interface SendTxOutput {
+export interface SendMetaTxOutput {
     txId: string;
 }
 
-export interface SendMetaTxInput {
+export interface SendTxInput {
     to: string;
 
     value: string;
@@ -28,6 +28,6 @@ export interface SendMetaTxInput {
     data: string;
 }
 
-export interface SendMetaTxOutput {
+export interface SendTxOutput {
     txId: string;
 }
