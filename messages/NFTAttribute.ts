@@ -67,6 +67,10 @@ export enum NFTTraitTypes {
 
     // 获得Buffer
     GetBuff = 'Get Buff',
+
+    Level = 'Level',
+
+    Creator = 'Creator',
 }
 
 // Head
