@@ -166,3 +166,20 @@ export interface UpgradePlayerItemSlotsOutput {
      */
     success: boolean;
 }
+
+export interface DeductUserExpInput{
+    userId: string;
+
+    deductExp: integer;    
+}
+export interface DeductUserExpOutput{
+     /**
+     * 是否扣除成功
+     */
+    deductSuccess: boolean;
+
+    /**
+    * 如果扣除失败, 则返回失败原因, 否则返回空字符串
+    */
+    failedReason: string;
+}

@@ -56,6 +56,8 @@ export enum PVPServiceAction {
 
 export enum GameServiceAction {
     LandUsingSkill = 'LandUsingSkill',
+    DeductUserExp = 'DeductUserExp',
+
 }
 
 export enum GameAccountServiceAction {
