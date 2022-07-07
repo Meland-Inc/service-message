@@ -103,6 +103,8 @@ export enum Web3ServiceAction {
 
     // 丢弃NFT
     BurnNFT = 'BurnNFT',
+
+    UseMELD = "UseMELD",
 }
 
 /**

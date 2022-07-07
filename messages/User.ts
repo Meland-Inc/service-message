@@ -57,3 +57,4 @@ export interface GetUserTrackOutput {
     occupied_land_num: integer,
     ditamin_amount: integer,
 }
+
